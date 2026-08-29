@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f1119;
+  --foreground: #e8e8e8;
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --secondary: #1e40af;
+  --card-bg: #1a1d2e;
+  --card-border: #2a2d3e;
+  --header-bg: #0a0c14;
+  --footer-bg: #080a10;
+  --accent-green: #22c55e;
+  --accent-red: #ef4444;
+  --text-muted: #9ca3af;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-header-bg: var(--header-bg);
+  --color-footer-bg: var(--footer-bg);
+  --color-accent-green: var(--accent-green);
+  --color-accent-red: var(--accent-red);
+  --color-text-muted: var(--text-muted);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2d3e #0f1119;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-border {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 2px;
+  border-radius: 12px;
+}
+
+.gradient-border-inner {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0f1119 0%, #1a1040 50%, #0f1119 100%);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
