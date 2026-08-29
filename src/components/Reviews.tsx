@@ -3,7 +3,7 @@ const reviews = [
     name: "Ahmet Y.",
     city: "Istanbul",
     stars: 5,
-    text: "Betrabet'i uzun suredir kullaniyorum, giris adresi her zaman guncel ve erisim sorunu yasanmiyor. Canli bahis secenekleri muhtesem.",
+    text: "Meritking'i uzun suredir kullaniyorum, giris adresi her zaman guncel ve erisim sorunu yasanmiyor. Canli bahis secenekleri muhtesem.",
   },
   {
     name: "Mehmet K.",
@@ -56,7 +56,7 @@ export default function Reviews() {
           <h2 className="text-3xl md:text-4xl font-black mb-4">
             Kullanici <span className="text-primary">Yorumlari</span>
           </h2>
-          <p className="text-gray-400">Betrabet kullanicilarinin deneyimleri</p>
+          <p className="text-gray-400">Meritking kullanicilarinin deneyimleri</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

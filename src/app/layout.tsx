@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Betrabet - Turkiye'nin En Guvenilir Bahis Sitesi",
-  description: "Betrabet giris adresi, canli bahis, casino, poker ve canli mac izleme. Guvenilir ve hizli erisim icin tiklayin.",
-  keywords: "betrabet, betrabet giris, canli bahis, casino, poker, spor bahisleri",
+  title: "Meritking - Turkiye'nin En Guvenilir Bahis Sitesi",
+  description: "Meritking giris adresi, canli bahis, casino, poker ve canli mac izleme. Guvenilir ve hizli erisim icin tiklayin.",
+  keywords: "meritking, meritking giris, canli bahis, casino, poker, spor bahisleri",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="tr" className={`${inter.variable} h-full antialiased`}>
       <head>
         <Script
-          src="https://cdn.jsdelivr.net/gh/rio-mat/betrabet-config@master/config.js"
+          src="/config.js"
           strategy="beforeInteractive"
         />
       </head>

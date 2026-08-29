@@ -12,9 +12,9 @@ function getConfig() {
     return { loginUrl: LOGIN, registerUrl: REGISTER, currentDomain: DOMAIN };
   }
   return {
-    currentDomain: "https://betrabet366.com",
-    loginUrl: "https://betrabet366.com/login",
-    registerUrl: "https://betrabet366.com/register",
+    currentDomain: "https://mrking5029.com",
+    loginUrl: "https://mrking5029.com/",
+    registerUrl: "https://mrking5029.com/",
   };
 }
 

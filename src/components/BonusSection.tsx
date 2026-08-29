@@ -17,7 +17,7 @@ export default function BonusSection() {
                 %100 Hos Geldin <span className="text-primary">Bonusu</span>
               </h2>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Betrabet&apos;e ilk kez uye olun ve ilk para yatirma isleminizde %100 bonus kazanin.
+                Meritking&apos;e ilk kez uye olun ve ilk para yatirma isleminizde %100 bonus kazanin.
                 Spor bahisleri ve casino oyunlarinda kullanabileceginiz bonuslar sizi bekliyor.
               </p>
               <a

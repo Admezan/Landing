@@ -3,11 +3,11 @@ import { useState } from "react";
 import { SITE_CONFIG } from "@/config";
 
 const navLinks = [
-  { label: "Betrabet", href: "#" },
-  { label: "Betrabet Giris", href: "#giris" },
-  { label: "Betrabet Bonus", href: "#bonus" },
+  { label: "Meritking", href: "#" },
+  { label: "Meritking Giris", href: "#giris" },
+  { label: "Meritking Bonus", href: "#bonus" },
   { label: "Guvenilir mi?", href: "#guvenilir" },
-  { label: "Betrabet Casino", href: "#casino" },
+  { label: "Meritking Casino", href: "#casino" },
 ];
 
 export default function Header() {

@@ -44,7 +44,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold mb-4 text-primary">Hizli Linkler</h4>
             <ul className="space-y-2">
-              {["Betrabet Giris", "Spor Bahisleri", "Canli Casino", "Poker", "Promosyonlar"].map((l) => (
+              {["Meritking Giris", "Spor Bahisleri", "Canli Casino", "Poker", "Promosyonlar"].map((l) => (
                 <li key={l}>
                   <a href="#" className="text-sm text-gray-400 hover:text-primary transition">{l}</a>
                 </li>
@@ -87,7 +87,7 @@ export default function Footer() {
             <span className="text-xs text-gray-600">Lisans No: OGL/2024/1248/0716</span>
           </div>
           <p className="text-xs text-gray-600 text-center">
-            &copy; 2024 Betrabet. Tum haklari saklidir. 18+ Kumar bagimlilik yapabilir.
+            &copy; 2026 Meritking. Tum haklari saklidir. 18+ Kumar bagimlilik yapabilir.
           </p>
         </div>
       </div>

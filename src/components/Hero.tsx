@@ -16,7 +16,7 @@ export default function Hero() {
               CANLI YAYIN AKTIF
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-              <span className="text-primary">BETRABET</span>
+              <span className="text-primary">MERITKING</span>
               <br />
               <span className="text-white">TURKIYE&apos;DEKI BAHISCILERIN</span>
               <br />
@@ -72,7 +72,7 @@ export default function Hero() {
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-yellow-300 flex items-center justify-center">
                   <span className="text-4xl font-black text-black">B</span>
                 </div>
-                <span className="text-2xl font-bold text-white">BETRABET</span>
+                <span className="text-2xl font-bold text-white">MERITKING</span>
                 <div className="grid grid-cols-2 gap-3 w-full mt-4">
                   {["Spor", "Casino", "Canli", "Poker"].map((t) => (
                     <div key={t} className="bg-background rounded-xl p-3 text-center">

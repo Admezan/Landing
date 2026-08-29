@@ -3,20 +3,20 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Betrabet giris adresine nasil ulasabilirim?",
-    a: "Betrabet giris adresine bu sayfa uzerinden kolayca ulasabilirsiniz. Adres degisikliklerinde guncel link bu sayfada paylasilmaktadir. Sosyal medya hesaplarimizi takip ederek de en yeni adresi ogrenebilirsiniz.",
+    q: "Meritking giris adresine nasil ulasabilirim?",
+    a: "Meritking giris adresine bu sayfa uzerinden kolayca ulasabilirsiniz. Adres degisikliklerinde guncel link bu sayfada paylasilmaktadir. Sosyal medya hesaplarimizi takip ederek de en yeni adresi ogrenebilirsiniz.",
   },
   {
-    q: "Betrabet hos geldin bonusu nedir?",
-    a: "Betrabet'e yeni uye olan kullanicilar icin cazip hos geldin bonuslari sunulmaktadir. Ilk para yatirma isleminizde %100'e varan bonus kazanabilirsiniz. Detayli bilgi icin promosyonlar sayfamizi ziyaret edin.",
+    q: "Meritking hos geldin bonusu nedir?",
+    a: "Meritking'e yeni uye olan kullanicilar icin cazip hos geldin bonuslari sunulmaktadir. Ilk para yatirma isleminizde %100'e varan bonus kazanabilirsiniz. Detayli bilgi icin promosyonlar sayfamizi ziyaret edin.",
   },
   {
-    q: "Betrabet'te hangi bahis secenekleri var?",
-    a: "Betrabet'te futbol, basketbol, tenis, voleybol dahil 20'den fazla spor dalinda pre-match ve canli bahis secenekleri bulunmaktadir. 4.000'den fazla bahis secenegi ile genis bir yelpaze sunulmaktadir.",
+    q: "Meritking'de hangi bahis secenekleri var?",
+    a: "Meritking'de futbol, basketbol, tenis, voleybol dahil 20'den fazla spor dalinda pre-match ve canli bahis secenekleri bulunmaktadir. 4.000'den fazla bahis secenegi ile genis bir yelpaze sunulmaktadir.",
   },
   {
-    q: "Betrabet casino oyunlari guvenilir mi?",
-    a: "Betrabet casino oyunlari, dunyanin en bilinen oyun saglayicilari tarafindan sunulmaktadir. Tum oyunlar bagimsiz denetim kuruluslari tarafindan test edilmekte ve adil oyun sertifikalarina sahiptir.",
+    q: "Meritking casino oyunlari guvenilir mi?",
+    a: "Meritking casino oyunlari, dunyanin en bilinen oyun saglayicilari tarafindan sunulmaktadir. Tum oyunlar bagimsiz denetim kuruluslari tarafindan test edilmekte ve adil oyun sertifikalarina sahiptir.",
   },
   {
     q: "Canli casino nasil oynanir?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Cekim islemleri ne kadar surede tamamlanir?",
-    a: "Betrabet'te cekim islemleri ortalama 15-30 dakika icinde tamamlanmaktadir. Banka havalesi, papara, kripto para ve diger odeme yontemleri ile hizli ve guvenli cekim yapabilirsiniz.",
+    a: "Meritking'de cekim islemleri ortalama 15-30 dakika icinde tamamlanmaktadir. Banka havalesi, papara, kripto para ve diger odeme yontemleri ile hizli ve guvenli cekim yapabilirsiniz.",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black mb-4">
-            Betrabet <span className="text-primary">Merak Edilenler</span>
+            Meritking <span className="text-primary">Merak Edilenler</span>
           </h2>
           <p className="text-gray-400">Sikca sorulan sorular ve cevaplari</p>
         </div>
