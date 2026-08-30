@@ -23,7 +23,7 @@ export type ToolPage = {
   related: string[];
 };
 
-export const toolPages: ToolPage[] = [
+const coreTools: ToolPage[] = [
   {
     slug: "cevrim-sarti-hesaplama",
     h1: "Çevrim Şartı Hesaplama",
@@ -130,6 +130,46 @@ export const toolPages: ToolPage[] = [
     ],
   },
 ];
+
+const bankrollTool: ToolPage = {
+  slug: "bankroll-hesaplama",
+  h1: "Bankroll ve Birim Bahis Hesaplama",
+  title: "Bankroll Hesaplama - Birim Bahis ve Kelly Kriteri",
+  description:
+    "Bahis bütçenize göre birim bahis tutarını, kaç ardışık kayba dayanacağınızı ve Kelly kriterine göre matematiksel bahis büyüklüğünü hesaplayın.",
+  ozet: "Bütçenize göre kupon başına ayrılacak tutarı ve dayanıklılığınızı hesaplar.",
+  fark: "Kelly kriteri ve dayanma payı",
+  updated: "2026-08-30",
+  body: [
+    { type: "p", text: "Bahiste uzun vadeli sonucu belirleyen şey tek tek kuponların tutup tutmaması değil, kupon başına ne kadar ayırdığınızdır. Doğru tahmin yapan ama bahis boyutunu yanlış belirleyen biri, yanlış tahmin yapandan daha hızlı bütçe tüketebilir. Bu araç iki soruyu birlikte cevaplar: kupon başına ne kadar ayırmalıyım ve bu tutarla kaç kötü sonuca dayanabilirim?" },
+    { type: "h2", text: "Birim Bahis ve Dayanma Payı" },
+    { type: "p", text: "Birim bahis, bütçenizin kupon başına ayırdığınız sabit yüzdesidir. Yaygın aralık yüzde 1 ile yüzde 5 arasındadır. Asıl önemli olan yüzdenin kendisi değil, o yüzdenin kaç ardışık kayba dayandığıdır. Yüzde 5 ile oynayan biri yirmi kötü sonuçta bütçesini tüketir; yüzde 1 ile oynayan yüz kupon dayanır. Bahiste kötü seriler kaçınılmazdır, bu yüzden dayanma payı bir konfor meselesi değil, oyunda kalmanın koşuludur." },
+    { type: "h2", text: "Kelly Kriteri Ne Yapar?" },
+    { type: "p", text: "Sabit yüzde her bahse aynı tutarı ayırır; oranın ne olduğuna bakmaz. Kelly kriteri ise bahis büyüklüğünü avantajınızın büyüklüğüne göre ayarlar. Formül, sizin tahmin ettiğiniz olasılık ile oranın ima ettiği olasılık arasındaki farkı kullanır: fark büyükse daha çok, küçükse daha az önerir. Avantaj yoksa sıfır önerir, yani bahis yapılmamasını söyler. Bu, Kelly'nin en değerli tarafıdır: bahis yapmamayı da bir seçenek olarak hesaba katar." },
+    { type: "h2", text: "Neden Yarım Kelly?" },
+    { type: "p", text: "Tam Kelly matematiksel olarak uzun vadeli büyümeyi en üst düzeye çıkarır, ancak çok oynak bir yol izler; bakiyede sert düşüşler yaşanır. Ayrıca formülün girdisi olan olasılık tahmini sizin öngörünüzdür ve yanılma payı taşır. Tahmin biraz yanlışsa tam Kelly ciddi biçimde fazla bahis önerir. Bu iki nedenle uygulamada yarım Kelly tercih edilir: büyümenin büyük kısmını korur, oynaklığı belirgin biçimde azaltır ve tahmin hatasına karşı tampon bırakır." },
+    { type: "h2", text: "Aracın Sınırı" },
+    { type: "p", text: "Kelly hesabının tamamı, girdiğiniz olasılık tahmininin isabetli olduğu varsayımına dayanır. Tahmin yanlışsa sonuç da yanlış olur; araç bunu bilemez. Bu yüzden Kelly bir kazanç yöntemi değil, tahmininize güveniyorsanız o güvenin karşılığı olan bahis boyutunu gösteren bir ölçüdür. Kendi tahminlerinizin geçmişte ne kadar isabetli çıktığını bilmiyorsanız, sabit ve düşük bir birim bahisle devam etmek daha güvenlidir." },
+    { type: "p", text: "18+ · Oyun bir eğlence biçimidir, kazanç garantisi değildir. Lütfen sorumlu oynayın." },
+  ],
+  faq: [
+    { q: "Birim bahis ne kadar olmalı?", a: "Yaygın aralık bütçenin %1 ile %5'i arasındadır. Belirleyici olan yüzde değil, o yüzdenin kaç ardışık kayba dayandığıdır." },
+    { q: "Kelly kriteri nedir?", a: "Bahis büyüklüğünü avantajın büyüklüğüne göre belirleyen formüldür. Avantaj yoksa sıfır, yani bahis yapmamayı önerir." },
+    { q: "Neden tam Kelly değil de yarım Kelly?", a: "Tam Kelly çok oynaktır ve olasılık tahmininizdeki küçük bir hata ciddi fazla bahse yol açar. Yarım Kelly büyümenin çoğunu korur, riski azaltır." },
+    { q: "Kelly negatif çıkarsa ne yapmalıyım?", a: "Bahis yapmamalısınız. Negatif sonuç, o oranda uzun vadede beklenen kaybın olduğunu gösterir." },
+    { q: "Kaç ardışık kayba dayanmam gerekir?", a: "Kötü seriler kaçınılmazdır. En az 50 kupon dayanacak bir birim bahis, oyunda kalma açısından güvenli sayılır." },
+    { q: "Kaybımı geri almak için bahsi büyütmeli miyim?", a: "Hayır. Kayıp sonrası bahis büyütmek, bütçeyi en hızlı tüketen davranıştır ve hiçbir bankroll yöntemi bunu önermez." },
+  ],
+  related: [
+    "bahiste-bankroll-yonetimi",
+    "bahis-orani-nasil-okunur",
+    "kombine-ve-sistem-bahis-farki",
+    "sorumlu-oyun-limit-nasil-konur",
+  ],
+};
+
+/** Tum araclar - dizin, sitemap ve ana sayfa bolumu bunu kullanir */
+export const toolPages: ToolPage[] = [...coreTools, bankrollTool];
 
 export function getToolPage(slug: string) {
   return toolPages.find((t) => t.slug === slug);
