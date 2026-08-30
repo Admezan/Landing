@@ -7,6 +7,7 @@ import BonusSection from "@/components/BonusSection";
 import PaymentsSection from "@/components/PaymentsSection";
 import FAQ from "@/components/FAQ";
 import HubSection from "@/components/HubSection";
+import TopicsSection from "@/components/TopicsSection";
 import GuidesSection from "@/components/GuidesSection";
 import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
@@ -30,6 +31,7 @@ export default function Home() {
         <PaymentsSection />
         <HubSection />
         <FAQ />
+        <TopicsSection />
         <GuidesSection />
         <Reviews />
       </main>
