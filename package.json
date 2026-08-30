@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "seo": "bash scripts/seo-audit.sh out",
-    "seo:build": "next build && bash scripts/seo-audit.sh out"
+    "seo:build": "next build && bash scripts/seo-audit.sh out",
+    "perf": "bash scripts/perf-audit.sh out",
+    "audit": "bash scripts/seo-audit.sh out && bash scripts/perf-audit.sh out",
+    "audit:build": "next build && bash scripts/seo-audit.sh out && bash scripts/perf-audit.sh out"
   },
   "dependencies": {
     "next": "16.2.1",

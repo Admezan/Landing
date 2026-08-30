@@ -94,6 +94,8 @@ echo
 # ---- 1) SAYFA DENETIMI ----------------------------------------------
 while IFS= read -r f; do
   echo "$f" | grep -qE "$SKIP_REGEX" && continue
+  # noindex sayfalari ( or. iframe embed'leri) arama icin degil - denetim disi
+  grep -qiE '<meta name="robots"[^>]*content="[^"]*noindex' "$f" && continue
   PAGES=$((PAGES+1))
   rel="${f#$OUT_DIR/}"
   html="$(extract "$f")"
@@ -200,6 +202,7 @@ if [ -f "$OUT_DIR/sitemap.xml" ]; then
   # out/ icindeki her indekslenebilir sayfa sitemap'te var mi?
   while IFS= read -r f; do
     echo "$f" | grep -qE "$SKIP_REGEX" && continue
+    grep -qiE '<meta name="robots"[^>]*content="[^"]*noindex' "$f" && continue  # noindex = sitemap disi, dogal
     rel="${f#$OUT_DIR/}"
     slug="/${rel%.html}"; [ "$rel" = "index.html" ] && slug="/"
     slug="${slug%/index}"
