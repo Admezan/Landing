@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useParamsOnce, sayiOku, useKopyala } from "./useUrlState";
 
 /*
  * Cevrim sarti hesaplayici.
@@ -29,6 +30,18 @@ export default function CevrimHesaplayici() {
   const [katki, setKatki] = useState(100);
   const [gun, setGun] = useState(7);
   const [gunlukTempo, setGunlukTempo] = useState(1500);
+  const { kopyalandi, kopyala } = useKopyala();
+
+  // Paylasilan baglantiyla gelindiyse senaryoyu geri kur
+  useParamsOnce((usp) => {
+    setYatirim(Math.max(0, sayiOku(usp, "y", 1000)));
+    setBonus(Math.max(0, sayiOku(usp, "b", 1000)));
+    setKatsayi(Math.max(0, sayiOku(usp, "k", 8)));
+    setTaban(usp.get("t") === "bonus" ? "bonus" : "toplam");
+    setKatki(sayiOku(usp, "kt", 100));
+    setGun(Math.max(1, sayiOku(usp, "g", 7)));
+    setGunlukTempo(Math.max(0, sayiOku(usp, "tm", 1500)));
+  });
 
   const tabanTutar = taban === "bonus" ? bonus : yatirim + bonus;
   const cevrim = tabanTutar * katsayi;
@@ -135,6 +148,24 @@ export default function CevrimHesaplayici() {
       <div className={`mt-4 p-5 rounded-xl border ${renkler[durum.renk]}`}>
         <h3 className={`font-bold mb-2 ${basliRenk[durum.renk]}`}>{durum.baslik}</h3>
         <p className="text-sm text-gray-300 leading-relaxed">{durum.metin}</p>
+      </div>
+
+      <div className="mt-5 pt-5 border-t border-card-border flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={() =>
+            kopyala({
+              y: String(yatirim), b: String(bonus), k: String(katsayi),
+              t: taban, kt: String(katki), g: String(gun), tm: String(gunlukTempo),
+            })
+          }
+          className="px-5 py-2.5 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
+        >
+          {kopyalandi ? "Bağlantı kopyalandı ✓" : "Bu hesabın bağlantısını kopyala"}
+        </button>
+        <span className="text-xs text-gray-500">
+          Bağlantıyı açan kişi aynı senaryoyu görür.
+        </span>
       </div>
 
       {katki < 100 && isFinite(gercekHacim) && (

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useParamsOnce, useKopyala } from "./useUrlState";
 
 /*
  * Oran -> olasilik cevirici ve marj hesabi.
@@ -22,6 +23,23 @@ export default function OranOlasilikCevirici() {
     { ad: "Deplasman", oran: "3.60" },
   ]);
   const [kendiTahmin, setKendiTahmin] = useState("50");
+  const { kopyalandi, kopyala } = useKopyala();
+
+  // Paylasilan baglantiyla gelindiyse oranlari ve tahmini geri kur
+  useParamsOnce((usp) => {
+    const o = usp.get("o");
+    if (o) {
+      const liste = o.split(",").filter(Boolean).slice(0, 3);
+      if (liste.length >= 2) {
+        const adlar = liste.length === 2
+          ? ["1. seçenek", "2. seçenek"]
+          : ["Ev sahibi", "Beraberlik", "Deplasman"];
+        setSecimler(liste.map((oran, i) => ({ ad: adlar[i], oran })));
+      }
+    }
+    const t = usp.get("t");
+    if (t) setKendiTahmin(t);
+  });
 
   const oranlar = secimler.map((s) => parseFloat(s.oran.replace(",", ".")));
   const gecerli = oranlar.every((o) => isFinite(o) && o > 1);
@@ -176,6 +194,21 @@ export default function OranOlasilikCevirici() {
               <p className="text-gray-500 text-xs">0 ile 100 arasında bir yüzde girin.</p>
             )}
           </div>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-card-border flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={() =>
+              kopyala({ o: secimler.map((s) => s.oran).join(","), t: kendiTahmin })
+            }
+            className="px-5 py-2.5 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
+          >
+            {kopyalandi ? "Bağlantı kopyalandı ✓" : "Bu hesabın bağlantısını kopyala"}
+          </button>
+          <span className="text-xs text-gray-500">
+            Bağlantıyı açan kişi aynı oranları ve sonucu görür.
+          </span>
         </div>
       </div>
     </div>

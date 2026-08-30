@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE_CONFIG, SITE_URL } from "@/config";
 import { articles } from "@/app/blog/articles";
+import EmbedKutusu from "@/components/tools/EmbedKutusu";
 import { getToolPage, type ToolPage } from "@/app/araclar/tools-content";
 
 export function toolMetadata(slug: string): Metadata {
@@ -124,6 +125,8 @@ export default function ToolPageView({
               ))}
             </div>
           </div>
+
+          <EmbedKutusu slug={t.slug} baslik={t.h1} />
 
           {related.length > 0 && (
             <div className="mt-12">

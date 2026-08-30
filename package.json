@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo": "bash scripts/seo-audit.sh out",
+    "seo:build": "next build && bash scripts/seo-audit.sh out"
   },
   "dependencies": {
     "next": "16.2.1",

@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
+import { useParamsOnce, sayiOku, useKopyala } from "./useUrlState";
 
 /*
  * Kombine ve sistem kupon hesaplayici.
@@ -37,6 +38,18 @@ export default function KuponHesaplayici() {
   const [oranlar, setOranlar] = useState<string[]>(BASLANGIC);
   const [sistem, setSistem] = useState(0); // 0 = kombine (tumu)
   const [birim, setBirim] = useState(50);
+  const { kopyalandi, kopyala } = useKopyala();
+
+  // Paylasilan baglantiyla gelindiyse kuponu oldugu gibi geri kur
+  useParamsOnce((usp) => {
+    const o = usp.get("o");
+    if (o) {
+      const liste = o.split(",").filter(Boolean).slice(0, 10);
+      if (liste.length >= 2) setOranlar(liste);
+    }
+    setSistem(sayiOku(usp, "s", 0));
+    setBirim(Math.max(1, sayiOku(usp, "b", 50)));
+  });
 
   const sayilar = oranlar.map((o) => parseFloat(o.replace(",", ".")));
   const gecerli = sayilar.every((o) => isFinite(o) && o > 1);
@@ -229,6 +242,21 @@ export default function KuponHesaplayici() {
               Maliyet {tl(hesap.maliyet)} TL. &quot;Duruma bağlı&quot; satırlarda sonuç, tutan maçların
               yüksek mi düşük mü oranlı olduğuna göre kâr ya da zarar olabilir.
             </p>
+
+            <div className="mt-6 pt-6 border-t border-card-border flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={() =>
+                  kopyala({ o: oranlar.join(","), s: String(sistem), b: String(birim) })
+                }
+                className="px-5 py-2.5 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
+              >
+                {kopyalandi ? "Bağlantı kopyalandı ✓" : "Bu kuponun bağlantısını kopyala"}
+              </button>
+              <span className="text-xs text-gray-500">
+                Bağlantıyı açan kişi aynı kuponu ve hesabı görür.
+              </span>
+            </div>
           </div>
         </>
       ) : (

@@ -22,14 +22,22 @@ export async function generateMetadata({
   const a = articles.find((x) => x.slug === slug);
   if (!a) return { title: "Yazı bulunamadı" };
   const url = `${BASE}/blog/${a.slug}`;
+  // Marka ekini yalnizca <title> ~60 karakter altinda kaldigi surece ekle;
+  // aksi halde anahtar-kelime yogun ham basligi tek basina kullan (SERP kirpma onlenir).
+  const pageTitle =
+    `${a.title} - Meritking Blog`.length <= 60
+      ? `${a.title} - Meritking Blog`
+      : `${a.title} | Meritking`.length <= 60
+        ? `${a.title} | Meritking`
+        : a.title;
   return {
-    title: `${a.title} - Meritking Blog`,
+    title: pageTitle,
     description: a.description,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
       url,
-      title: `${a.title} - Meritking Blog`,
+      title: pageTitle,
       description: a.description,
       siteName: "Meritking",
       locale: "tr_TR",
@@ -37,7 +45,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${a.title} - Meritking Blog`,
+      title: pageTitle,
       description: a.description,
     },
   };
