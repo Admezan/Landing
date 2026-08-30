@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/config";
 
-const base = "https://xn--eritking-x79c.com";
+const base = SITE_URL;
 
 export const dynamic = "force-static";
 

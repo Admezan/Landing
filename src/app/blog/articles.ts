@@ -16,7 +16,7 @@ export const articles: Article[] = [
     title: "Meritking Üyelik Nasıl Açılır? Adım Adım Kayıt Rehberi",
     description:
       "Meritking üyelik açma adımları: kayıt formunda istenen bilgiler, doğrulama, sık yapılan hatalar ve hesabınızı ilk kez kullanıma hazırlama.",
-    date: "2026-08-30",
+    date: "2026-08-26",
     readingMinutes: 7,
     body: [
       { type: "p", text: "Meritking üyelik açmak birkaç dakikalık bir işlemdir, ancak kayıt sırasında girilen bilgilerin doğruluğu ilerideki ödeme işlemlerini doğrudan etkiler. Bu rehberde kayıt formunun her adımını, hangi bilginin neden istendiğini ve yeni kullanıcıların en sık düştüğü hataları ele alıyoruz." },
@@ -55,7 +55,7 @@ export const articles: Article[] = [
     title: "Para Çekme Süresi ve Limitleri Nasıl İşler?",
     description:
       "Bahis sitelerinde para çekme süreleri, yöntem bazlı limitler, işlemi geciktiren nedenler ve çekim talebini sorunsuz sonuçlandırma yolları.",
-    date: "2026-08-30",
+    date: "2026-08-18",
     readingMinutes: 8,
     body: [
       { type: "p", text: "Para çekme, kullanıcıların en çok soru sorduğu konudur ve süreyi belirleyen tek bir faktör yoktur. Seçtiğiniz yöntem, hesabınızın doğrulama durumu ve talebin gönderildiği saat birlikte işleyerek toplam süreyi oluşturur. Bu yazıda süreci baştan sona açıklıyoruz." },
@@ -87,7 +87,7 @@ export const articles: Article[] = [
     title: "Canlı Bahis Nasıl Oynanır? Yeni Başlayanlar İçin Rehber",
     description:
       "Canlı bahis nedir, maç sırasında oranlar neden değişir, hangi bahis türleri sunulur ve yeni başlayanların dikkat etmesi gereken noktalar.",
-    date: "2026-08-30",
+    date: "2026-08-09",
     readingMinutes: 8,
     body: [
       { type: "p", text: "Canlı bahis, karşılaşma başladıktan sonra devam eden ve oyunun akışına göre oranların sürekli güncellendiği bahis türüdür. Maç öncesi bahisten temel farkı, kararınızı sahadaki gerçek performansı görerek vermenizdir. Bu rehberde canlı bahsin nasıl işlediğini ve nelere dikkat edilmesi gerektiğini anlatıyoruz." },
@@ -119,7 +119,7 @@ export const articles: Article[] = [
     title: "Bahiste Bankroll Yönetimi: Bütçenizi Nasıl Korursunuz?",
     description:
       "Bankroll nedir, birim bahis mantığı nasıl kurulur, kayıp kovalamaktan nasıl kaçınılır ve uzun vadede bütçeyi koruyan pratik kurallar.",
-    date: "2026-08-30",
+    date: "2026-07-31",
     readingMinutes: 7,
     body: [
       { type: "p", text: "Bankroll, bahis için ayırdığınız ve kaybetmeyi göze aldığınız toplam bütçedir. Bu tutarın günlük harcamalarınızdan tamamen ayrı durması, sorumlu oyunun temel şartıdır. Bankroll yönetimi ise bu bütçeyi nasıl böleceğinizi ve her kupona ne kadar ayıracağınızı belirleyen basit bir disiplindir." },
@@ -151,7 +151,7 @@ export const articles: Article[] = [
     title: "Kombine ve Sistem Bahis Arasındaki Fark Nedir?",
     description:
       "Kombine kupon ile sistem bahsin farkı, oranların nasıl çarpıldığı, sistem bahsin riski nasıl dağıttığı ve hangi durumda hangisinin uygun olduğu.",
-    date: "2026-08-30",
+    date: "2026-07-22",
     readingMinutes: 7,
     body: [
       { type: "p", text: "Kombine ve sistem, birden fazla seçimi tek kuponda birleştirmenin iki farklı yoludur. Aralarındaki fark, kuponun kazanması için kaç seçimin tutması gerektiğidir. Bu ayrımı anlamak, aynı seçimlerle çok farklı risk profilleri kurmanızı sağlar." },
@@ -183,7 +183,7 @@ export const articles: Article[] = [
     title: "Hesap Doğrulama (KYC) Neden İsteniyor?",
     description:
       "KYC nedir, hangi belgeler istenir, doğrulama ne kadar sürer, belge neden reddedilir ve süreci ilk seferde tamamlamanın pratik yolları.",
-    date: "2026-08-30",
+    date: "2026-07-14",
     readingMinutes: 7,
     body: [
       { type: "p", text: "KYC, kullanıcının kim olduğunu doğrulayan standart bir kimlik denetimi sürecidir. Bankalardan kripto borsalarına kadar finansal işlem yapılan hemen her platformda uygulanır. Bahis sitelerinde de amacı aynıdır: yaş sınırını denetlemek, hesabın gerçek sahibini teyit etmek ve ödemelerin doğru kişiye ulaşmasını sağlamak." },
@@ -215,7 +215,7 @@ export const articles: Article[] = [
     title: "Müşteri Hizmetleri Nasıl Kullanılır? Sorununuzu Hızlı Çözün",
     description:
       "Canlı destek, e-posta ve sosyal kanalların farkı; hangi sorun için hangi kanalın uygun olduğu ve talebi ilk seferde çözdüren yazma yöntemi.",
-    date: "2026-08-30",
+    date: "2026-07-05",
     readingMinutes: 6,
     body: [
       { type: "p", text: "Müşteri hizmetleri, doğru kullanıldığında çoğu sorunu tek görüşmede çözer. Kullanıcıların yaşadığı gecikmelerin büyük bölümü, hatalı kanal seçiminden veya eksik bilgi paylaşımından kaynaklanır. Bu yazıda hangi durumda hangi kanalı seçeceğinizi ve talebinizi nasıl yazacağınızı anlatıyoruz." },
@@ -247,7 +247,7 @@ export const articles: Article[] = [
     title: "Handikap Bahsi Nedir? Nasıl Oynanır?",
     description:
       "Handikap bahsi nedir, tek ve çift handikap farkı, Asya handikabı nasıl çalışır ve hangi maçlarda handikap tercih edilir.",
-    date: "2026-08-30",
+    date: "2026-06-26",
     readingMinutes: 7,
     body: [
       { type: "p", text: "Handikap bahsi, güçlü takıma sanal bir dezavantaj, zayıf takıma ise sanal bir avantaj vererek iki tarafın oranını birbirine yaklaştıran bahis türüdür. Favori takımın çok bariz olduğu ve maç sonucu oranının düşük kaldığı karşılaşmalarda tercih edilir." },
@@ -276,7 +276,7 @@ export const articles: Article[] = [
     title: "Alt/Üst Bahsi Nedir? Nasıl Oynanır?",
     description:
       "Alt üst bahsi nedir, eşik değeri ne anlama gelir, 2.5 üst nasıl hesaplanır ve hangi maçlarda alt üst tercih edilir.",
-    date: "2026-08-30",
+    date: "2026-06-17",
     readingMinutes: 6,
     body: [
       { type: "p", text: "Alt/üst bahsi, karşılaşmadaki toplam gol, sayı veya korner gibi bir değerin belirlenen eşiğin altında mı üstünde mi kalacağına dair bahistir. Hangi takımın kazandığı sonucu etkilemez; yalnızca toplam değer dikkate alınır. Bu yönüyle maç sonucundan bağımsız bir bakış sunar." },
@@ -305,7 +305,7 @@ export const articles: Article[] = [
     title: "Bahis Kuponu Nasıl Yapılır? Adım Adım",
     description:
       "Bahis kuponu nasıl hazırlanır: seçim ekleme, tutar belirleme, oran değişikliği onayı ve kuponu göndermeden önce kontrol edilecekler.",
-    date: "2026-08-30",
+    date: "2026-06-09",
     readingMinutes: 6,
     body: [
       { type: "p", text: "Bahis kuponu, seçtiğiniz bahisleri ve yatıracağınız tutarı bir arada tutan formdur. Kuponu doğru hazırlamak, oynadıktan sonra yaşanan çoğu şaşkınlığı baştan önler. Bu rehberde kupon oluşturmayı adım adım anlatıyoruz." },
@@ -343,7 +343,7 @@ export const articles: Article[] = [
     title: "Para Çekme Talebi Neden Bekliyor? 7 Yaygın Neden",
     description:
       "Çekim talebi neden beklemede kalır: eksik doğrulama, açık bonus, yöntem uyuşmazlığı, limit aşımı ve banka saatleri.",
-    date: "2026-08-30",
+    date: "2026-05-30",
     readingMinutes: 6,
     body: [
       { type: "p", text: "Çekim talebinizin beklemede görünmesi çoğu zaman bir sorun değil, sürecin normal bir aşamasıdır. Yine de beklemenin uzaması genellikle belirli ve çözülebilir nedenlerden kaynaklanır. En sık karşılaşılan yedi nedeni sırayla ele alıyoruz." },
@@ -376,7 +376,7 @@ export const articles: Article[] = [
     title: "Hesap Kapatma Nasıl Yapılır? Kalıcı Kapatma ve Mola",
     description:
       "Hesap kapatma adımları, geçici dondurma ile kalıcı kapatma farkı, bakiye ne olur ve kendini dışlama araçları.",
-    date: "2026-08-30",
+    date: "2026-05-21",
     readingMinutes: 5,
     body: [
       { type: "p", text: "Hesabınızı kapatmak istediğinizde önünüzde birden fazla seçenek vardır. Kalıcı kapatma tek yol değildir; geçici dondurma ve kendini dışlama araçları çoğu durumda daha uygun bir çözümdür. Hangisinin size uyduğunu bilmek önemlidir." },
@@ -405,7 +405,7 @@ export const articles: Article[] = [
     title: "Şifremi Unuttum — Nasıl Sıfırlarım?",
     description:
       "Şifre sıfırlama adımları, sıfırlama e-postası gelmiyorsa ne yapılır ve yeni şifreyi güvenli belirleme kuralları.",
-    date: "2026-08-30",
+    date: "2026-05-12",
     readingMinutes: 5,
     body: [
       { type: "p", text: "Şifre unutmak sık karşılaşılan ve hızlı çözülen bir durumdur. Sıfırlama süreci birkaç dakika sürer; asıl önemli olan yeni şifreyi doğru belirlemek ve sıfırlama sırasında dolandırıcılık girişimlerine karşı dikkatli olmaktır." },

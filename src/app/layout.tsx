@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { SITE_URL } from "@/config";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://xn--eritking-x79c.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Meritking Giriş - Güncel Adres, Canlı Bahis ve Casino",
   description: "Meritking giriş adresi, canlı bahis, casino, poker ve canlı maç izleme. Güvenilir ve hızlı erişim için tıklayın.",
   keywords: "meritking, meritking giriş, meritking güncel giriş, canlı bahis, casino, poker, spor bahisleri",

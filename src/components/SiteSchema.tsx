@@ -1,4 +1,6 @@
-const BASE = "https://xn--eritking-x79c.com";
+import { SITE_URL } from "@/config";
+
+const BASE = SITE_URL;
 
 const siteLd = {
   "@context": "https://schema.org",

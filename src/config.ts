@@ -1,3 +1,7 @@
+// Sitenin kendi yayin adresi (IDN punycode). Canonical, sitemap, robots ve
+// yapisal veri bu tek kaynaktan beslenir; adres degisirse yalniz burasi guncellenir.
+export const SITE_URL = "https://xn--eritking-x79c.com";
+
 declare global {
   interface Window {
     SITE_CONFIG?: { domain: string; login: string; register: string };

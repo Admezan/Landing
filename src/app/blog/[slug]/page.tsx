@@ -5,8 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RelatedContent from "@/components/RelatedContent";
 import { articles } from "../articles";
+import { SITE_URL } from "@/config";
 
-const BASE = "https://xn--eritking-x79c.com";
+const BASE = SITE_URL;
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
