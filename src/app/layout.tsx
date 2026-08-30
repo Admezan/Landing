@@ -5,7 +5,9 @@ import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  // Turkce s, g, i, I harfleri latin-ext alt kumesinde; olmadan yedek fontla cizilir
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

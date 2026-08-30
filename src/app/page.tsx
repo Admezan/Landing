@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import BonusSection from "@/components/BonusSection";
 import PaymentsSection from "@/components/PaymentsSection";
 import FAQ from "@/components/FAQ";
+import GuidesSection from "@/components/GuidesSection";
 import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
@@ -27,6 +28,7 @@ export default function Home() {
         <BonusSection />
         <PaymentsSection />
         <FAQ />
+        <GuidesSection />
         <Reviews />
       </main>
       <Footer />
