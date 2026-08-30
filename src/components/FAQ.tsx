@@ -83,11 +83,11 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {openIndex === i && (
-                <div className="px-6 pb-4">
-                  <p className="text-sm text-gray-400 leading-relaxed">{f.a}</p>
-                </div>
-              )}
+              {/* Cevap her zaman DOM'da: akordeon kapaliyken CSS ile gizlenir,
+                  boylece metin taranabilir kalir. */}
+              <div className={`px-6 pb-4 ${openIndex === i ? "" : "hidden"}`}>
+                <p className="text-sm text-gray-400 leading-relaxed">{f.a}</p>
+              </div>
             </div>
           ))}
         </div>
