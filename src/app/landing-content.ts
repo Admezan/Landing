@@ -172,6 +172,7 @@ const corePages: LandingPage[] = [
       },
     ],
     related: [
+      "bonus-cevrim-sarti-nasil-hesaplanir",
       "bahiste-bankroll-yonetimi",
       "para-cekme-suresi-ve-limitleri",
       "para-cekme-talebi-neden-bekliyor",
@@ -247,9 +248,10 @@ const corePages: LandingPage[] = [
       },
     ],
     related: [
+      "iki-adimli-dogrulama-nasil-acilir",
       "sifremi-unuttum-nasil-sifirlarim",
       "hesap-dogrulama-kyc-neden-gerekli",
-      "musteri-hizmetleri-nasil-kullanilir",
+      "canli-mac-izleme-nasil-calisir",
     ],
   },
   {
@@ -317,9 +319,11 @@ const corePages: LandingPage[] = [
       },
     ],
     related: [
+      "slot-rtp-ve-volatilite",
+      "rulet-cesitleri-ve-kurallari",
+      "blackjack-temel-strateji",
+      "baccarat-nasil-oynanir",
       "bahiste-bankroll-yonetimi",
-      "para-cekme-suresi-ve-limitleri",
-      "hesap-dogrulama-kyc-neden-gerekli",
     ],
   },
   {
@@ -387,6 +391,8 @@ const corePages: LandingPage[] = [
       },
     ],
     related: [
+      "bahis-orani-nasil-okunur",
+      "erken-kazanc-cash-out-nedir",
       "canli-bahis-nasil-oynanir",
       "kombine-ve-sistem-bahis-farki",
       "handikap-bahsi-nedir",
@@ -467,9 +473,10 @@ const morePages: LandingPage[] = [
       },
     ],
     related: [
+      "papara-ile-yatirim-ve-cekim",
+      "kripto-ile-para-yatirma",
       "para-cekme-suresi-ve-limitleri",
       "para-cekme-talebi-neden-bekliyor",
-      "hesap-dogrulama-kyc-neden-gerekli",
     ],
   },
   {
@@ -542,9 +549,11 @@ const morePages: LandingPage[] = [
       },
     ],
     related: [
+      "iki-adimli-dogrulama-nasil-acilir",
+      "sorumlu-oyun-limit-nasil-konur",
+      "kumar-bagimliligi-belirtileri-ve-destek",
       "hesap-dogrulama-kyc-neden-gerekli",
       "para-cekme-talebi-neden-bekliyor",
-      "musteri-hizmetleri-nasil-kullanilir",
       "hesap-kapatma-nasil-yapilir",
     ],
   },
