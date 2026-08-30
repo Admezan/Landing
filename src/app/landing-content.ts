@@ -173,6 +173,8 @@ const corePages: LandingPage[] = [
     ],
     related: [
       "bonus-cevrim-sarti-nasil-hesaplanir",
+      "deneme-bonusu-ve-hos-geldin-bonusu-farki",
+      "vip-ve-sadakat-programi-nasil-isler",
       "bahiste-bankroll-yonetimi",
       "para-cekme-suresi-ve-limitleri",
       "para-cekme-talebi-neden-bekliyor",
@@ -392,7 +394,10 @@ const corePages: LandingPage[] = [
     ],
     related: [
       "bahis-orani-nasil-okunur",
+      "bahis-terimleri-sozlugu",
       "erken-kazanc-cash-out-nedir",
+      "e-spor-bahisleri-nasil-oynanir",
+      "tenis-bahisleri-marketleri",
       "canli-bahis-nasil-oynanir",
       "kombine-ve-sistem-bahis-farki",
       "handikap-bahsi-nedir",
@@ -475,6 +480,7 @@ const morePages: LandingPage[] = [
     related: [
       "papara-ile-yatirim-ve-cekim",
       "kripto-ile-para-yatirma",
+      "banka-havalesi-ile-yatirim-ve-cekim",
       "para-cekme-suresi-ve-limitleri",
       "para-cekme-talebi-neden-bekliyor",
     ],
