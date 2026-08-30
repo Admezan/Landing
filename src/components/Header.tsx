@@ -3,12 +3,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { SITE_CONFIG } from "@/config";
 
+// Menu, ana sayfa ici capalar yerine niyet sayfalarina baglanir:
+// her sorgu kendi sayfasina ic link alir.
 const navLinks = [
   { label: "Meritking", href: "/" },
-  { label: "Meritking Giriş", href: "/#giris" },
-  { label: "Meritking Bonus", href: "/#bonus" },
-  { label: "Güvenilir mi?", href: "/#guvenilir" },
-  { label: "Meritking Casino", href: "/#casino" },
+  { label: "Güncel Giriş Adresi", href: "/meritking-guncel-giris-adresi" },
+  { label: "Bonus", href: "/meritking-bonus" },
+  { label: "Casino", href: "/meritking-casino" },
+  { label: "Spor Bahisleri", href: "/meritking-spor-bahisleri" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -30,13 +32,13 @@ export default function Header() {
 
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.label}
               href={l.href}
               className="text-sm font-medium text-gray-300 hover:text-primary transition"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -77,14 +79,14 @@ export default function Header() {
       {open && (
         <div className="lg:hidden bg-header-bg border-t border-card-border px-4 pb-4">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
               className="block py-2 text-sm text-gray-300 hover:text-primary transition"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <div className="flex gap-3 mt-3">
             <a href={SITE_CONFIG.loginUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 rounded-lg border border-primary text-primary text-sm font-semibold">

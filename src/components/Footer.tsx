@@ -47,13 +47,15 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "Meritking Giriş", href: "/" },
-                { label: "Meritking Giriş Adresi", href: "/#giris" },
-                { label: "Canlı Casino", href: "/#casino" },
-                { label: "Meritking Bonus", href: "/#bonus" },
+                { label: "Meritking Güncel Giriş Adresi", href: "/meritking-guncel-giris-adresi" },
+                { label: "Meritking Bonus", href: "/meritking-bonus" },
+                { label: "Meritking Casino", href: "/meritking-casino" },
+                { label: "Meritking Spor Bahisleri", href: "/meritking-spor-bahisleri" },
+                { label: "Meritking Mobil Giriş", href: "/meritking-mobil-giris" },
                 { label: "Blog", href: "/blog" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-gray-400 hover:text-primary transition">{l.label}</a>
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-primary transition">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -69,7 +71,7 @@ export default function Footer() {
                 { label: "Hesap Doğrulama (KYC)", href: "/blog/hesap-dogrulama-kyc-neden-gerekli" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-gray-400 hover:text-primary transition">{l.label}</a>
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-primary transition">{l.label}</Link>
                 </li>
               ))}
             </ul>

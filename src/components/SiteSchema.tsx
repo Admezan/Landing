@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/config";
+import { landingPages } from "@/app/landing-content";
 
 const BASE = SITE_URL;
 
@@ -27,6 +28,23 @@ const siteLd = {
       inLanguage: "tr-TR",
       publisher: { "@id": `${BASE}/#organization` },
     },
+    {
+      "@type": "WebPage",
+      "@id": `${BASE}/#webpage`,
+      url: `${BASE}/`,
+      name: "Meritking Giriş - Güncel Adres, Canlı Bahis ve Casino",
+      inLanguage: "tr-TR",
+      isPartOf: { "@id": `${BASE}/#website` },
+      about: { "@id": `${BASE}/#organization` },
+    },
+    // Niyet sayfalarini gezinme ogesi olarak bildirir; site linkleri icin sinyal
+    ...landingPages.map((p) => ({
+      "@type": "SiteNavigationElement",
+      "@id": `${BASE}/${p.slug}#nav`,
+      name: p.h1,
+      description: p.description,
+      url: `${BASE}/${p.slug}`,
+    })),
   ],
 };
 

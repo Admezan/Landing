@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { articles } from "@/app/blog/articles";
+import { landingPages } from "@/app/landing-content";
 import { SITE_CONFIG } from "@/config";
 
 // İçerik siteleri arası karşılıklı link (footprint düşük tutmak için tek, doğal bağlantı)
@@ -7,6 +8,8 @@ const PARTNER = { href: "https://reklam-mrking.com/blog", label: "Meritking rehb
 
 export default function RelatedContent({ current }: { current: string }) {
   const related = articles.filter((a) => a.slug !== current).slice(0, 3);
+  // Destek icerigi -> niyet sayfasi geri baglantisi; makaleyi ilgili konu sayfasina baglar
+  const hubs = landingPages.filter((p) => p.related.includes(current));
 
   return (
     <div className="mt-14 space-y-10">
@@ -39,6 +42,25 @@ export default function RelatedContent({ current }: { current: string }) {
           </a>
         </div>
       </div>
+
+      {/* Konu sayfaları — makaleden ilgili niyet sayfasına geri bağlantı */}
+      {hubs.length > 0 && (
+        <div>
+          <h2 className="text-xl font-bold mb-4">Bu Konunun Ana Sayfası</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {hubs.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/${p.slug}`}
+                className="block p-4 rounded-xl bg-card-bg border border-primary/40 hover:border-primary transition"
+              >
+                <h3 className="text-sm font-semibold mb-1 leading-snug text-primary">{p.h1}</h3>
+                <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">{p.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* İlgili yazılar — blog içi linkleme */}
       <div>
