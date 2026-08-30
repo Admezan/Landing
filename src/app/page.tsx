@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import GirisSection from "@/components/GirisSection";
 import Services from "@/components/Services";
 import BonusSection from "@/components/BonusSection";
+import PaymentsSection from "@/components/PaymentsSection";
 import FAQ from "@/components/FAQ";
 import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <GirisSection />
         <Services />
         <BonusSection />
+        <PaymentsSection />
         <FAQ />
         <Reviews />
       </main>

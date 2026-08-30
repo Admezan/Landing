@@ -4,6 +4,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { articles } from "./articles";
 
+const BASE = "https://xn--eritking-x79c.com";
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${BASE}/` },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE}/blog` },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Blog - Meritking Giriş, Bonus ve Rehber Yazıları",
   description: "Meritking giriş, güncel adres, bonus, ödeme ve casino rehberleri. Canlı casino, spor bahisleri ve slot üzerine özgün Meritking blog yazıları.",
@@ -23,6 +34,10 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Header />
       <main className="flex-1 max-w-4xl mx-auto px-4 py-16 w-full">
         <h1 className="text-3xl md:text-4xl font-black mb-2">

@@ -7,6 +7,7 @@ export type Article = {
   readingMinutes: number;
   body: Section[];
   faq?: { q: string; a: string }[];
+  steps?: { name: string; text: string }[];
 };
 
 export const articles: Article[] = [
@@ -40,6 +41,13 @@ export const articles: Article[] = [
       { q: "Doğrulama kodu telefonuma gelmiyor, ne yapmalıyım?", a: "Numaranın doğru girildiğini kontrol edin, şebeke çekim gücünüzü teyit edin ve birkaç dakika bekleyip yeniden kod isteyin. Sorun sürerse destek ekibine yazın." },
       { q: "Üyelik için kimlik belgesi şart mı?", a: "Kayıt anında zorunlu değildir, ancak para çekme aşamasında kimlik doğrulaması istenir. Belgelerinizi önceden hazır bulundurmak süreci hızlandırır." },
       { q: "Hesabımı sonradan kapatabilir miyim?", a: "Evet. Müşteri hizmetlerine talep ileterek hesabınızı kalıcı olarak kapatabilir veya belirli bir süre için dondurabilirsiniz." },
+    ],
+    steps: [
+      { name: "Bilgileri haz\u0131rla", text: "Kimlik belgenizdeki ad ve soyad\u0131n tam yaz\u0131m\u0131n\u0131, ge\u00e7erli bir e-posta adresini ve aktif kulland\u0131\u011f\u0131n\u0131z cep telefonu numaras\u0131n\u0131 haz\u0131r bulundurun." },
+      { name: "Kay\u0131t formunu doldur", text: "Ad, soyad, do\u011fum tarihi, e-posta, telefon ve \u015fifre alanlar\u0131n\u0131 doldurun. Ad soyad\u0131 kimli\u011finizdeki gibi yaz\u0131n; \u00f6deme i\u015flemlerinde bu bilgi esas al\u0131n\u0131r." },
+      { name: "G\u00fc\u00e7l\u00fc \u015fifre belirle", text: "Ba\u015fka hi\u00e7bir sitede kullanmad\u0131\u011f\u0131n\u0131z, en az on iki karakterlik bir \u015fifre se\u00e7in. B\u00fcy\u00fck harf, k\u00fc\u00e7\u00fck harf, rakam ve sembol kar\u0131\u015ft\u0131r\u0131n." },
+      { name: "E-posta ve telefonu do\u011frula", text: "E-posta adresinize gelen onay ba\u011flant\u0131s\u0131na t\u0131klay\u0131n ve telefonunuza gelen do\u011frulama kodunu girin. Her iki do\u011frulama da tamamlanmal\u0131d\u0131r." },
+      { name: "Hesab\u0131 kullan\u0131ma haz\u0131rla", text: "Hesap ayarlar\u0131ndan g\u00fcnl\u00fck veya haftal\u0131k yat\u0131r\u0131m limiti belirleyin ve bildirim tercihlerinizi ayarlay\u0131n." },
     ],
   },
   {
@@ -322,6 +330,13 @@ export const articles: Article[] = [
       { q: "Kupon neden reddedildi?", a: "En sık nedeni onay süresi içinde oranın değişmesidir. Limit aşımı ve maçın başlaması da ret nedeni olabilir." },
       { q: "Kupon geçmişimi nereden görürüm?", a: "Hesap panelindeki bahis geçmişi bölümünden tarih bazlı tüm kuponlarınıza ulaşabilirsiniz." },
     ],
+    steps: [
+      { name: "Kar\u015f\u0131la\u015fma ve bahis t\u00fcr\u00fcn\u00fc se\u00e7", text: "Bran\u015f\u0131 ve kar\u015f\u0131la\u015fmay\u0131 a\u00e7\u0131n, ard\u0131ndan oynamak istedi\u011finiz orana t\u0131klayarak se\u00e7imi kupona ekleyin." },
+      { name: "Kupon t\u00fcr\u00fcn\u00fc belirle", text: "Tek se\u00e7im yapt\u0131ysan\u0131z kupon tekli olur. Birden fazla se\u00e7imde kombine veya sistem aras\u0131nda tercih yap\u0131n." },
+      { name: "Tutar\u0131 gir", text: "Bahis tutar\u0131n\u0131 yaz\u0131n ve ekranda hesaplanan potansiyel kazanc\u0131 kontrol edin. Sistem kuponlar\u0131nda toplam maliyeti mutlaka do\u011frulay\u0131n." },
+      { name: "Oran de\u011fi\u015fikli\u011fi tercihini ayarla", text: "Kupon onaylanana kadar oran de\u011fi\u015febilir. Otomatik kabul, yaln\u0131zca y\u00fckseli\u015f veya her de\u011fi\u015fikli\u011fi onaya sunma se\u00e7eneklerinden birini belirleyin." },
+      { name: "Son kontrol\u00fc yap ve g\u00f6nder", text: "Se\u00e7imlerin do\u011fru ma\u00e7a ait oldu\u011funu, bahis t\u00fcr\u00fcn\u00fc, tutar\u0131 ve toplam oran\u0131 bir kez daha okuyun; ard\u0131ndan kuponu onaylay\u0131n." },
+    ],
   },
   {
     slug: "para-cekme-talebi-neden-bekliyor",
@@ -412,6 +427,12 @@ export const articles: Article[] = [
       { q: "Sıfırlama bağlantısı çalışmıyor.", a: "Bağlantılar tek kullanımlık ve kısa sürelidir. Yeni bağlantı talep edip hemen kullanın." },
       { q: "Şifremi kim isteyebilir?", a: "Hiç kimse. Destek ekibi dahil hiçbir yetkili şifrenizi veya doğrulama kodunuzu istemez." },
       { q: "Şifre değişince oturumlarım kapanır mı?", a: "Çoğu sistemde açık oturumlar güvenlik gereği sonlandırılır ve yeniden giriş yapmanız istenir." },
+    ],
+    steps: [
+      { name: "S\u0131f\u0131rlama ba\u011flant\u0131s\u0131n\u0131 iste", text: "Giri\u015f ekran\u0131ndaki \u015fifremi unuttum ba\u011flant\u0131s\u0131na t\u0131klay\u0131n ve kay\u0131tl\u0131 e-posta adresinizi veya kullan\u0131c\u0131 ad\u0131n\u0131z\u0131 girin." },
+      { name: "E-postay\u0131 kontrol et", text: "Hesab\u0131n\u0131za tan\u0131ml\u0131 adrese gelen tek kullan\u0131ml\u0131k s\u0131f\u0131rlama ba\u011flant\u0131s\u0131n\u0131 a\u00e7\u0131n. Gelmezse spam ve tan\u0131t\u0131mlar klas\u00f6r\u00fcne bak\u0131n." },
+      { name: "Yeni \u015fifreyi belirle", text: "Ba\u015fka hi\u00e7bir sitede kullanmad\u0131\u011f\u0131n\u0131z, en az on iki karakterlik bir \u015fifre girin. Tahmin edilebilir kal\u0131plardan ka\u00e7\u0131n\u0131n." },
+      { name: "Oturumlar\u0131 yenile", text: "\u015eifre de\u011fi\u015fince a\u00e7\u0131k oturumlar g\u00fcvenlik gere\u011fi sonland\u0131r\u0131l\u0131r; yeni \u015fifrenizle tekrar giri\u015f yap\u0131n." },
     ],
   },
   ];

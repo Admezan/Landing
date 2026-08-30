@@ -9,6 +9,12 @@ const siteLd = {
       name: "Meritking",
       url: `${BASE}/`,
       logo: `${BASE}/og-image.png`,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        availableLanguage: ["Turkish"],
+        url: `${BASE}/#guvenilir`,
+      },
       description: "Meritking güncel giriş adresi, spor bahisleri, canlı casino, poker ve slot oyunlari.",
     },
     {

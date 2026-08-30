@@ -75,6 +75,23 @@ export default async function ArticlePage({
       }
     : null;
 
+
+  const howToLd = a.steps && a.steps.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: a.title,
+        description: a.description,
+        inLanguage: "tr-TR",
+        step: a.steps.map((s, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: s.name,
+          text: s.text,
+        })),
+      }
+    : null;
+
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -99,6 +116,12 @@ export default async function ArticlePage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      {howToLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
         />
       )}
       <Header />
