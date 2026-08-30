@@ -1,33 +1,33 @@
 const reviews = [
   {
-    name: "Ahmet Y.",
-    city: "Istanbul",
+    name: "Kerem A.",
+    city: "İzmir",
     stars: 5,
-    text: "Meritking'i uzun suredir kullaniyorum, giris adresi her zaman guncel ve erisim sorunu yasanmiyor. Canli bahis secenekleri muhtesem.",
+    text: "Kimlik doğrulamamı üyeliğin ilk günü tamamladım, ilk çekimde hiç beklemedim. Belgeleri baştan yüklemek gerçekten fark yaratıyor.",
   },
   {
-    name: "Mehmet K.",
-    city: "Ankara",
-    stars: 5,
-    text: "Casino oyunlari cok kaliteli, ozellikle canli rulet ve blackjack. Cekim islemleri de cok hizli, 20 dakikada hesabima gecti.",
-  },
-  {
-    name: "Emre S.",
-    city: "Bursa",
+    name: "Selin B.",
+    city: "Eskişehir",
     stars: 4,
-    text: "Hos geldin bonusu gercekten cok iyi. Spor bahislerinde oranlar rakiplere gore daha yuksek. Tavsiye ederim.",
+    text: "Hesap panelindeki işlem geçmişi bölümü işime yarıyor. Ne kadar yatırdığımı tarih tarih görebilmek bütçeyi takip etmeyi kolaylaştırdı.",
   },
   {
-    name: "Fatma D.",
-    city: "Antalya",
+    name: "Onur T.",
+    city: "Adana",
     stars: 5,
-    text: "Musterisi hizmetleri 7/24 aktif ve cok ilgili. Her sorunumda aninda destek aliyorum. Guvenilir bir site.",
+    text: "Haftalık limit tanımlama özelliğini kullanıyorum. Sınıra gelince sistem uyarıyor, bu da oyunu kontrollü tutmama yardımcı oluyor.",
   },
   {
-    name: "Ali R.",
-    city: "Konya",
+    name: "Deniz K.",
+    city: "Trabzon",
     stars: 4,
-    text: "Mobil uygulama cok kullanisli, her yerden bahis yapabiliyorum. Canli mac izleme ozelligi de harika.",
+    text: "Canlı destekle yazışırken kullanıcı adımı ve işlem numarasını ilk mesajda verdim, konu tek görüşmede çözüldü. Doğru kanalı seçmek önemliymiş.",
+  },
+  {
+    name: "Burak M.",
+    city: "Gaziantep",
+    stars: 5,
+    text: "Blog bölümündeki kombine ve sistem bahis karşılaştırması işime yaradı. Artık kuponu neden o şekilde kurduğumu biliyorum.",
   },
 ];
 
@@ -54,9 +54,9 @@ export default function Reviews() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black mb-4">
-            Kullanici <span className="text-primary">Yorumlari</span>
+            Kullanıcı <span className="text-primary">Yorumları</span>
           </h2>
-          <p className="text-gray-400">Meritking kullanicilarinin deneyimleri</p>
+          <p className="text-gray-400">Meritking kullanıcılarının deneyimleri</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -70,7 +70,7 @@ export default function Reviews() {
                 &ldquo;{r.text}&rdquo;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-yellow-300 flex items-center justify-center text-black text-sm font-bold">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-pink-400 flex items-center justify-center text-black text-sm font-bold">
                   {r.name[0]}
                 </div>
                 <div>

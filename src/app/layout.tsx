@@ -9,9 +9,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Meritking - Turkiye'nin En Guvenilir Bahis Sitesi",
-  description: "Meritking giris adresi, canli bahis, casino, poker ve canli mac izleme. Guvenilir ve hizli erisim icin tiklayin.",
-  keywords: "meritking, meritking giris, canli bahis, casino, poker, spor bahisleri",
+  metadataBase: new URL("https://xn--eritking-x79c.com"),
+  title: "Meritking Giriş - Güncel Adres, Canlı Bahis ve Casino",
+  description: "Meritking giriş adresi, canlı bahis, casino, poker ve canlı maç izleme. Güvenilir ve hızlı erişim için tıklayın.",
+  keywords: "meritking, meritking giriş, meritking güncel giriş, canlı bahis, casino, poker, spor bahisleri",
+  openGraph: {
+    type: "website",
+    siteName: "Meritking",
+    locale: "tr_TR",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Meritking - güncel giriş adresi",
+      },
+    ],
+    title: "Meritking Giriş - Güncel Adres, Canlı Bahis ve Casino",
+    description: "Meritking giriş adresi: canlı bahis, casino, poker ve canlı maç izleme. Güvenilir ve hızlı erişim.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

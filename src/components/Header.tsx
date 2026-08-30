@@ -1,13 +1,15 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { SITE_CONFIG } from "@/config";
 
 const navLinks = [
-  { label: "Meritking", href: "#" },
-  { label: "Meritking Giris", href: "#giris" },
-  { label: "Meritking Bonus", href: "#bonus" },
-  { label: "Guvenilir mi?", href: "#guvenilir" },
-  { label: "Meritking Casino", href: "#casino" },
+  { label: "Meritking", href: "/" },
+  { label: "Meritking Giriş", href: "/#giris" },
+  { label: "Meritking Bonus", href: "/#bonus" },
+  { label: "Güvenilir mi?", href: "/#guvenilir" },
+  { label: "Meritking Casino", href: "/#casino" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
@@ -16,15 +18,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-header-bg/95 backdrop-blur border-b border-card-border">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-yellow-300 flex items-center justify-center font-black text-black text-lg">
-            B
+        <Link href="/" className="flex items-center gap-2">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-pink-400 flex items-center justify-center font-black text-black text-lg">
+            M
           </div>
           <span className="text-xl font-bold tracking-tight">
-            <span className="text-primary">BETRA</span>
-            <span className="text-white">BET</span>
+            <span className="text-primary">Merit</span>
+            <span className="text-white">king</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (
@@ -45,7 +47,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
           >
-            Uye Girisi
+            Üye Girişi
           </a>
           <a
             href={SITE_CONFIG.registerUrl}
@@ -53,7 +55,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-lg bg-primary text-black text-sm font-bold hover:bg-primary-hover transition glow-primary"
           >
-            Uye Ol
+            Üye Ol
           </a>
         </div>
 
@@ -86,10 +88,10 @@ export default function Header() {
           ))}
           <div className="flex gap-3 mt-3">
             <a href={SITE_CONFIG.loginUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 rounded-lg border border-primary text-primary text-sm font-semibold">
-              Uye Girisi
+              Üye Girişi
             </a>
             <a href={SITE_CONFIG.registerUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 rounded-lg bg-primary text-black text-sm font-bold">
-              Uye Ol
+              Üye Ol
             </a>
           </div>
         </div>

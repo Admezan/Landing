@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f1119;
-  --foreground: #e8e8e8;
-  --primary: #f59e0b;
-  --primary-hover: #d97706;
-  --secondary: #1e40af;
-  --card-bg: #1a1d2e;
-  --card-border: #2a2d3e;
-  --header-bg: #0a0c14;
-  --footer-bg: #080a10;
+  --background: #0c0a14;
+  --foreground: #ececf1;
+  --primary: #a855f7;
+  --primary-hover: #9333ea;
+  --secondary: #ec4899;
+  --card-bg: #16121f;
+  --card-border: #2a2338;
+  --header-bg: #0a0810;
+  --footer-bg: #070510;
   --accent-green: #22c55e;
   --accent-red: #ef4444;
   --text-muted: #9ca3af;
@@ -32,7 +32,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2a2d3e #0f1119;
+  scrollbar-color: #2a2338 #0c0a14;
 }
 
 body {
@@ -58,11 +58,11 @@ html {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #0f1119 0%, #1a1040 50%, #0f1119 100%);
+  background: linear-gradient(135deg, #0c0a14 0%, #2a1245 50%, #0c0a14 100%);
 }
 
 .glow-primary {
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.35);
 }
 
 .glow-green {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 const paymentMethods = [
   "Papara", "Banka Havalesi", "Kripto", "Visa", "Mastercard", "Bitcoin", "USDT", "Cepbank",
 ];
@@ -15,17 +16,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-10 mb-10">
           <div className="md:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-yellow-300 flex items-center justify-center font-black text-black text-base">
-                B
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-pink-400 flex items-center justify-center font-black text-black text-base">
+                M
               </div>
               <span className="text-lg font-bold">
-                <span className="text-primary">BETRA</span>
-                <span className="text-white">BET</span>
+                <span className="text-primary">Merit</span>
+                <span className="text-white">king</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm text-gray-500 leading-relaxed">
-              Turkiye&apos;nin en guvenilir online bahis ve casino platformu. Lisansli ve guvenli.
+              Türkiye&apos;nin en güvenilir online bahis ve casino platformu. Lisanslı ve güvenli.
             </p>
             <div className="flex gap-3 mt-5">
               {socialLinks.map((s) => (
@@ -42,11 +43,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-4 text-primary">Hizli Linkler</h4>
+            <h4 className="text-sm font-bold mb-4 text-primary">Hızlı Linkler</h4>
             <ul className="space-y-2">
-              {["Meritking Giris", "Spor Bahisleri", "Canli Casino", "Poker", "Promosyonlar"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="text-sm text-gray-400 hover:text-primary transition">{l}</a>
+              {[
+                { label: "Meritking Giriş", href: "/" },
+                { label: "Meritking Giriş Adresi", href: "/#giris" },
+                { label: "Canlı Casino", href: "/#casino" },
+                { label: "Meritking Bonus", href: "/#bonus" },
+                { label: "Blog", href: "/blog" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="text-sm text-gray-400 hover:text-primary transition">{l.label}</a>
                 </li>
               ))}
             </ul>
@@ -55,16 +62,21 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold mb-4 text-primary">Destek</h4>
             <ul className="space-y-2">
-              {["Canli Destek", "SSS", "Iletisim", "Gizlilik Politikasi", "Kullanim Sartlari"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="text-sm text-gray-400 hover:text-primary transition">{l}</a>
+              {[
+                { label: "SSS", href: "/#guvenilir" },
+                { label: "Üyelik Nasıl Açılır?", href: "/blog/meritking-uyelik-nasil-acilir" },
+                { label: "Para Çekme Süreleri", href: "/blog/para-cekme-suresi-ve-limitleri" },
+                { label: "Hesap Doğrulama (KYC)", href: "/blog/hesap-dogrulama-kyc-neden-gerekli" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="text-sm text-gray-400 hover:text-primary transition">{l.label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-4 text-primary">Odeme Yontemleri</h4>
+            <h4 className="text-sm font-bold mb-4 text-primary">Ödeme Yöntemleri</h4>
             <div className="flex flex-wrap gap-2">
               {paymentMethods.map((p) => (
                 <span
@@ -82,12 +94,12 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card-bg border border-card-border">
               <div className="w-2 h-2 rounded-full bg-accent-green" />
-              <span className="text-xs text-gray-400">Lisansli</span>
+              <span className="text-xs text-gray-400">Lisanslı</span>
             </div>
             <span className="text-xs text-gray-600">Lisans No: OGL/2024/1248/0716</span>
           </div>
           <p className="text-xs text-gray-600 text-center">
-            &copy; 2026 Meritking. Tum haklari saklidir. 18+ Kumar bagimlilik yapabilir.
+            &copy; 2026 Meritking. Tüm hakları saklıdır. 18+ Kumar bağımlılık yapabilir.
           </p>
         </div>
       </div>

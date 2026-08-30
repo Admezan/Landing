@@ -13,20 +13,20 @@ export default function Hero() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse" />
-              CANLI YAYIN AKTIF
+              CANLI YAYIN AKTİF
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-              <span className="text-primary">MERITKING</span>
+              <span className="text-primary">Meritking</span>
               <br />
-              <span className="text-white">TURKIYE&apos;DEKI BAHISCILERIN</span>
+              <span className="text-white">TÜRKİYE&apos;DEKİ BAHİSÇİLERİN</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">
-                ILK TERCIHI
+              <span className="bg-gradient-to-r from-primary to-pink-400 bg-clip-text text-transparent">
+                KAZANDIRAN ADRESİ
               </span>
             </h1>
             <p className="text-gray-400 text-lg mb-8 max-w-lg">
-              Spor bahisleri, canli casino, poker ve daha fazlasi. Guvenilir alt yapi,
-              hizli odeme ve 7/24 destek ile en iyi bahis deneyimini yasayin.
+              Spor bahisleri, canlı casino ve poker bir arada. Güvenilir altyapı,
+              hızlı ödeme ve kesintisiz 7/24 destek ile kazanmaya hemen başlayın.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -35,7 +35,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-xl bg-primary text-black font-bold text-base hover:bg-primary-hover transition glow-primary"
               >
-                Hemen Uye Ol
+                Hemen Üye Ol
               </a>
               <a
                 href={SITE_CONFIG.loginUrl}
@@ -43,7 +43,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-xl border border-gray-600 text-white font-semibold text-base hover:border-primary hover:text-primary transition"
               >
-                Giris Yap
+                Giriş Yap
               </a>
             </div>
 
@@ -60,7 +60,7 @@ export default function Hero() {
               <div className="w-px h-10 bg-card-border" />
               <div className="text-center">
                 <div className="text-2xl font-black text-primary">100K+</div>
-                <div className="text-xs text-gray-500">Mac</div>
+                <div className="text-xs text-gray-500">Maç</div>
               </div>
             </div>
           </div>
@@ -69,12 +69,12 @@ export default function Hero() {
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-card-border backdrop-blur-sm" />
               <div className="absolute inset-4 rounded-2xl bg-card-bg flex flex-col items-center justify-center gap-4 p-8">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-yellow-300 flex items-center justify-center">
-                  <span className="text-4xl font-black text-black">B</span>
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-pink-400 flex items-center justify-center">
+                  <span className="text-4xl font-black text-black">M</span>
                 </div>
-                <span className="text-2xl font-bold text-white">MERITKING</span>
+                <span className="text-2xl font-bold text-white">Meritking</span>
                 <div className="grid grid-cols-2 gap-3 w-full mt-4">
-                  {["Spor", "Casino", "Canli", "Poker"].map((t) => (
+                  {["Spor", "Casino", "Canlı", "Poker"].map((t) => (
                     <div key={t} className="bg-background rounded-xl p-3 text-center">
                       <span className="text-sm font-semibold text-gray-300">{t}</span>
                     </div>

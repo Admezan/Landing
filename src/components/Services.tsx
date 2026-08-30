@@ -5,10 +5,10 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
       </svg>
     ),
-    title: "Spor Bahisleri & Canli Bahis",
-    desc: "20'den fazla spor dalinda, 4.000+ bahis secenegi ve 100.000+ mac ile en genis bahis yelpazesi. Canli bahis ile maclari aninda takip edin ve bahis yapin.",
-    stats: ["20+ Spor", "4.000+ Secenek", "100K+ Mac"],
-    color: "from-blue-500 to-cyan-400",
+    title: "Spor Bahisleri & Canlı Bahis",
+    desc: "Futboldan tenise 20'yi aşkın branşta maç öncesi ve canlı bahis. Oranlar maçın akışına göre anlık güncellenir; kupon kurmadan önce seçim kurallarını inceleyebilirsiniz.",
+    stats: ["20+ Spor", "4.000+ Seçenek", "100K+ Maç"],
+    color: "from-violet-500 to-purple-400",
   },
   {
     icon: (
@@ -17,8 +17,8 @@ const services = [
       </svg>
     ),
     title: "Meritking Casino",
-    desc: "2.500'den fazla slot oyunu, canli krupiyerler esliginde blackjack, rulet, sicbo ve daha fazlasi. En populer saglayicilardan oyunlar sizi bekliyor.",
-    stats: ["2500+ Slot", "Canli Casino", "50+ Saglayici"],
+    desc: "Slot, blackjack, rulet ve baccarat masaları tek çatı altında. Her oyunun kendi kural sayfası ve bahis aralığı vardır; oynamadan önce göz atmanız önerilir.",
+    stats: ["2500+ Slot", "Canlı Casino", "50+ Sağlayıcı"],
     color: "from-purple-500 to-pink-400",
   },
   {
@@ -28,8 +28,8 @@ const services = [
       </svg>
     ),
     title: "Meritking Online Poker",
-    desc: "7 farkli poker agi ile Texas Hold'em, Omaha ve daha bircok poker cesidinde rakiplerinize karsi yeteneklerinizi gosterin.",
-    stats: ["7 Poker Agi", "Turnuvalar", "Canli Poker"],
+    desc: "Texas Hold'em ve Omaha başta olmak üzere farklı poker türlerinde masa ve turnuva seçenekleri. Masa limitleri giriş öncesinde görünür, bütçenize uygun olanı seçebilirsiniz.",
+    stats: ["7 Poker Ağı", "Turnuvalar", "Canlı Poker"],
     color: "from-green-500 to-emerald-400",
   },
   {
@@ -38,10 +38,10 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
       </svg>
     ),
-    title: "Betra Stream - Canli Mac Izle",
-    desc: "Canli mac yayinlari ile en populer sporlari ucretsiz izleyin. Futbol, basketbol, tenis ve daha fazlasini canli takip edin.",
-    stats: ["HD Yayin", "Ucretsiz", "Canli Skor"],
-    color: "from-red-500 to-orange-400",
+    title: "Meritking Stream - Canlı Maç İzle",
+    desc: "Seçili karşılaşmaları canlı takip edin. Yayın sahadaki olaya göre birkaç saniye gecikebilir; son saniye bahislerinde bunu hesaba katmakta fayda var.",
+    stats: ["HD Yayın", "Ücretsiz", "Canlı Skor"],
+    color: "from-fuchsia-500 to-pink-400",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function Services() {
             Neler <span className="text-primary">Sunuyoruz?</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Meritking ile spor bahislerinden casino oyunlarina, pokerden canli mac izlemeye kadar her sey tek bir platformda.
+            Meritking ile spor bahislerinden casino oyunlarına, pokerden canlı maç izlemeye kadar her şey tek bir platformda.
           </p>
         </div>
 

@@ -3,28 +3,36 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Meritking giris adresine nasil ulasabilirim?",
-    a: "Meritking giris adresine bu sayfa uzerinden kolayca ulasabilirsiniz. Adres degisikliklerinde guncel link bu sayfada paylasilmaktadir. Sosyal medya hesaplarimizi takip ederek de en yeni adresi ogrenebilirsiniz.",
+    q: "Meritking üyeliği ne kadar sürede açılır?",
+    a: "Kayıt formu ad, soyad, doğum tarihi, e-posta ve telefon bilgilerinizi ister; doldurması birkaç dakika sürer. Ad soyadınızı kimliğinizdeki gibi yazmanız önemlidir, çünkü ödeme işlemlerinde bu bilgi esas alınır.",
   },
   {
-    q: "Meritking hos geldin bonusu nedir?",
-    a: "Meritking'e yeni uye olan kullanicilar icin cazip hos geldin bonuslari sunulmaktadir. Ilk para yatirma isleminizde %100'e varan bonus kazanabilirsiniz. Detayli bilgi icin promosyonlar sayfamizi ziyaret edin.",
+    q: "Hesabımı doğrulamam gerekiyor mu?",
+    a: "İlk para çekme talebinde kimlik doğrulaması istenir. Kimlik belgesi, son üç aya ait adres belgesi ve ödeme yönteminizin size ait olduğunu gösteren belge yeterlidir. Doğrulamayı üyelik açar açmaz tamamlamak çekim aşamasında beklemenizi önler.",
   },
   {
-    q: "Meritking'de hangi bahis secenekleri var?",
-    a: "Meritking'de futbol, basketbol, tenis, voleybol dahil 20'den fazla spor dalinda pre-match ve canli bahis secenekleri bulunmaktadir. 4.000'den fazla bahis secenegi ile genis bir yelpaze sunulmaktadir.",
+    q: "Mobil cihazdan oynamak için uygulama indirmem gerekir mi?",
+    a: "Hayır. Telefon ve tablet tarayıcınızdan güncel adrese girerek tüm bölümleri kullanabilirsiniz. Tarayıcı sürümü her zaman en güncel hâli gösterdiği için ayrıca kurulum yapmanıza gerek kalmaz.",
   },
   {
-    q: "Meritking casino oyunlari guvenilir mi?",
-    a: "Meritking casino oyunlari, dunyanin en bilinen oyun saglayicilari tarafindan sunulmaktadir. Tum oyunlar bagimsiz denetim kuruluslari tarafindan test edilmekte ve adil oyun sertifikalarina sahiptir.",
+    q: "Yatırım yaptığım yöntemle mi para çekmeliyim?",
+    a: "Evet, kural olarak çekim yatırım yaptığınız yöntemle yapılır. Bu, ödemenin hesap sahibine ulaşmasını güvence altına alan bir kaynak doğrulaması gereğidir ve talebin reddedilmesini önler.",
   },
   {
-    q: "Canli casino nasil oynanir?",
-    a: "Canli casino bolumunde gercek krupiyerler esliginde blackjack, rulet, baccarat ve daha fazla oyun oynayabilirsiniz. HD kalitesinde canli yayin ile gercek casino deneyimini evinizden yasayin.",
+    q: "Bonus çevrim şartı ne anlama geliyor?",
+    a: "Çevrim şartı, bonus tutarının çekilebilir hâle gelmesi için belirli bir katta bahis yapılması gerektiğini ifade eder. Şart tamamlanmadan çekim talebi oluşturursanız işlem beklemeye alınabilir, bu yüzden bonusu almadan önce koşulları okuyun.",
   },
   {
-    q: "Cekim islemleri ne kadar surede tamamlanir?",
-    a: "Meritking'de cekim islemleri ortalama 15-30 dakika icinde tamamlanmaktadir. Banka havalesi, papara, kripto para ve diger odeme yontemleri ile hizli ve guvenli cekim yapabilirsiniz.",
+    q: "Harcamalarımı ve oyun geçmişimi nereden görebilirim?",
+    a: "Hesap panelindeki işlem geçmişi bölümünden tüm yatırım, çekim ve kupon kayıtlarınıza tarih bazlı ulaşabilirsiniz. Bu dökümü düzenli kontrol etmek, bütçenizi gerçek verilerle takip etmenin en sağlıklı yoludur.",
+  },
+  {
+    q: "Hesabıma harcama limiti koyabilir miyim?",
+    a: "Evet. Hesap ayarlarından günlük, haftalık veya aylık yatırım limiti tanımlayabilir; dilerseniz hesabınızı belirli bir süre için dondurabilirsiniz. Limit koymak sorumlu oyunun en etkili aracıdır.",
+  },
+  {
+    q: "Sorun yaşadığımda hangi kanaldan yazmalıyım?",
+    a: "Giriş sorunu, kupon görüntüleme veya bonus kodu gibi anlık konular için canlı destek en hızlısıdır. Belge gönderimi, ödeme itirazı ve hesap kapatma gibi konular ise e-posta üzerinden yazılı kayıt bırakarak ilerletilmelidir.",
   },
 ];
 
@@ -33,12 +41,26 @@ export default function FAQ() {
 
   return (
     <section id="guvenilir" className="py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        }}
+      />
       <div className="max-w-3xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black mb-4">
             Meritking <span className="text-primary">Merak Edilenler</span>
           </h2>
-          <p className="text-gray-400">Sikca sorulan sorular ve cevaplari</p>
+          <p className="text-gray-400">Sıkça sorulan sorular ve cevapları</p>
         </div>
 
         <div className="space-y-3">

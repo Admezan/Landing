@@ -14,11 +14,11 @@ export default function BonusSection() {
                 OZEL TEKLIF
               </div>
               <h2 className="text-3xl md:text-4xl font-black mb-4">
-                %100 Hos Geldin <span className="text-primary">Bonusu</span>
+                %100 Hoş Geldin <span className="text-primary">Bonusu</span>
               </h2>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Meritking&apos;e ilk kez uye olun ve ilk para yatirma isleminizde %100 bonus kazanin.
-                Spor bahisleri ve casino oyunlarinda kullanabileceginiz bonuslar sizi bekliyor.
+                Meritking&apos;e ilk kez üye olun ve ilk para yatırma işleminizde %100 bonus kazanın.
+                Spor bahisleri ve casino oyunlarında kullanabileceğiniz bonuslar sizi bekliyor.
               </p>
               <a
                 href={SITE_CONFIG.registerUrl}
@@ -32,8 +32,8 @@ export default function BonusSection() {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Spor Bonusu", value: "%100", sub: "Ilk Yatirim" },
-                { label: "Casino Bonusu", value: "%50", sub: "Her Yatirim" },
+                { label: "Spor Bonusu", value: "%100", sub: "İlk Yatırım" },
+                { label: "Casino Bonusu", value: "%50", sub: "Her Yatırım" },
                 { label: "Kayip Bonusu", value: "%15", sub: "Haftalik" },
                 { label: "Arkadasini Getir", value: "100 TL", sub: "Her Davet" },
               ].map((b) => (
