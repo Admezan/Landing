@@ -22,7 +22,7 @@ export type LandingPage = {
   related: string[];
 };
 
-export const landingPages: LandingPage[] = [
+const corePages: LandingPage[] = [
   {
     slug: "meritking-guncel-giris-adresi",
     h1: "Meritking Güncel Giriş Adresi",
@@ -395,6 +395,163 @@ export const landingPages: LandingPage[] = [
     ],
   },
 ];
+
+const morePages: LandingPage[] = [
+  {
+    slug: "meritking-para-yatirma",
+    h1: "Meritking Para Yatırma Yöntemleri",
+    title: "Meritking Para Yatırma - Yöntemler, Limitler ve Süreler",
+    description:
+      "Meritking para yatırma yöntemleri: Papara, banka havalesi, kripto ve kart. Yöntem bazlı limitler, işlem süreleri ve yatırımın geç yansıma nedenleri.",
+    intent: "Nasıl para yatırırım, hangi yöntem hızlı?",
+    updated: "2026-08-30",
+    body: [
+      {
+        type: "p",
+        text: "Para yatırma, hesabınızı kullanmaya başladığınız ilk adımdır ve seçtiğiniz yöntem yalnızca yatırımı değil, ilerideki para çekme işleminizi de belirler. Çoğu platformda çekim, yatırım yaptığınız yöntemle yapılır; bu yüzden ilk yatırımda seçtiğiniz kanal uzun süre sizinle kalır. Bu sayfa yöntemleri hız, limit ve pratik kullanım açısından karşılaştırır.",
+      },
+      { type: "h2", text: "Yöntem Seçerken Belirleyici Olan Üç Şey" },
+      {
+        type: "p",
+        text: "Birincisi işlem süresidir: bazı yöntemlerde bakiye saniyeler içinde yansır, bazılarında saatler sürer. İkincisi limitlerdir; her yöntemin alt ve üst sınırı farklıdır ve küçük tutarlarla oynayan biri için yüksek alt limitli bir yöntem kullanışsızdır. Üçüncüsü ise hesap sahipliğidir: kullandığınız ödeme aracının size ait olması zorunludur, başkasının hesabından yapılan yatırım çekim aşamasında sorun çıkarır.",
+      },
+      { type: "h2", text: "Hızlı Yansıyan Yöntemler" },
+      {
+        type: "p",
+        text: "Papara ve benzeri dijital cüzdanlar genellikle anında yansır ve alt limitleri düşüktür; bu yüzden küçük tutarlarla düzenli işlem yapanlar için en pratik seçenektir. Kripto para transferlerinde hız ağın yoğunluğuna bağlıdır: onay sayısı tamamlandığında bakiye yansır, bu çoğunlukla birkaç dakikadır ancak ağ yoğunsa uzayabilir. Kart ödemelerinde işlem anında sonuçlanır fakat bankanız aracı kuruma bağlı olarak işlemi reddedebilir.",
+      },
+      { type: "h2", text: "Banka Havalesi ve EFT" },
+      {
+        type: "p",
+        text: "Havale, mesai saatleri içinde genellikle kısa sürede tamamlanır; mesai dışında ve hafta sonunda ise bir sonraki iş gününe sarkabilir. Havalede en kritik nokta açıklama alanıdır: size verilen referans kodunu eksiksiz yazmazsanız yatırım hesabınızla eşleştirilemez ve manuel inceleme gerekir, bu da işlemi saatlerce geciktirir. Tutarı da kuruşuna kadar bildirdiğiniz şekilde göndermek eşleştirmeyi hızlandırır.",
+      },
+      { type: "h2", text: "Yatırım Yansımadıysa Ne Yapmalı?" },
+      {
+        type: "p",
+        text: "Önce bankanızdan veya cüzdan uygulamanızdan işlemin gerçekten tamamlandığını doğrulayın; bekleyen durumdaki bir transfer henüz gönderilmemiş sayılır. İşlem tamamlanmışsa dekont veya işlem numarasını hazırlayıp canlı desteğe iletin. Destek ekibinin ihtiyaç duyduğu şey tutar, saat ve referans numarasıdır; bu üçünü birlikte verdiğinizde eşleştirme çoğunlukla kısa sürede yapılır. Aynı işlemi tekrar göndermeyin, mükerrer yatırım geri iade süreci gerektirir.",
+      },
+      { type: "h2", text: "Yatırımdan Önce Bonus Kararını Verin" },
+      {
+        type: "p",
+        text: "Bonus, yatırım anında seçilir. Yatırımı yaptıktan sonra kampanyaya dâhil olmak çoğu durumda mümkün değildir. Bu yüzden yatırım ekranına gelmeden önce kampanyayı isteyip istemediğinize karar verin. Çevrim şartını tamamlayamayacağınızı düşünüyorsanız bonusu almamak bakiyenizi serbest bırakır ve para çekme işleminizi hızlandırır.",
+      },
+      {
+        type: "p",
+        text: "18+ · Oyun bir eğlence biçimidir, kazanç garantisi değildir. Lütfen sorumlu oynayın.",
+      },
+    ],
+    faq: [
+      {
+        q: "En hızlı para yatırma yöntemi hangisi?",
+        a: "Dijital cüzdanlar genellikle anında yansır. Kripto transferi ağ yoğunluğuna göre birkaç dakika sürer, banka havalesi ise mesai saatlerine bağlıdır.",
+      },
+      {
+        q: "Başkasının hesabından para yatırabilir miyim?",
+        a: "Hayır. Ödeme aracının hesap sahibiyle aynı kişiye ait olması zorunludur; aksi hâlde çekim talepleriniz reddedilir.",
+      },
+      {
+        q: "Havalede açıklama kodunu yazmayı unuttum, ne olur?",
+        a: "Yatırım otomatik eşleşmez ve manuel incelemeye düşer. Dekontu canlı desteğe ileterek işlemin hesabınıza tanımlanmasını isteyebilirsiniz.",
+      },
+      {
+        q: "Minimum yatırım tutarı ne kadar?",
+        a: "Yönteme göre değişir. Dijital cüzdanlarda alt limit düşükken, havale ve kriptoda daha yüksek olabilir; güncel limitler yatırım ekranında gösterilir.",
+      },
+      {
+        q: "Yatırım yaparken komisyon kesilir mi?",
+        a: "Platform tarafında genellikle kesinti olmaz. Ancak bankanız veya kripto ağı kendi işlem ücretini uygulayabilir.",
+      },
+      {
+        q: "Yatırdığım yöntemle mi çekmek zorundayım?",
+        a: "Kural olarak evet. Bu, ödemenin hesap sahibine ulaşmasını güvence altına alan bir kaynak doğrulaması gereğidir.",
+      },
+    ],
+    related: [
+      "para-cekme-suresi-ve-limitleri",
+      "para-cekme-talebi-neden-bekliyor",
+      "hesap-dogrulama-kyc-neden-gerekli",
+    ],
+  },
+  {
+    slug: "meritking-guvenilir-mi",
+    h1: "Meritking Güvenilir mi?",
+    title: "Meritking Güvenilir mi? Neye Bakarak Karar Verilir",
+    description:
+      "Bir bahis platformunun güvenilirliği neye bakarak değerlendirilir? Lisans, ödeme geçmişi, şeffaflık ve şikayet yönetimi üzerinden kontrol listesi.",
+    intent: "Güvenilir mi, param yatar mı?",
+    updated: "2026-08-30",
+    body: [
+      {
+        type: "p",
+        text: "Güvenilirlik sorusunun tek cümlelik bir cevabı yoktur; ölçülebilir göstergelere bakılarak değerlendirilir. Bu sayfada bir platformu değerlendirirken hangi kriterlere bakmanız gerektiğini, hangi işaretlerin uyarı niteliği taşıdığını ve kendi hesabınızın güvenliğini nasıl artıracağınızı anlatıyoruz. Amaç sizi bir sonuca ikna etmek değil, kendi kontrolünüzü yapabilmeniz.",
+      },
+      { type: "h2", text: "Birinci Ölçüt: Ödeme Geçmişi" },
+      {
+        type: "p",
+        text: "Bir platformun güvenilirliğinin en somut göstergesi, çekim taleplerini bildirdiği sürede ödeyip ödemediğidir. Lisans belgesi ya da site tasarımı bunun yerine geçmez. Değerlendirme yaparken kullanıcıların çekim deneyimlerine, özellikle yüksek tutarlı çekimlerin sonuçlanıp sonuçlanmadığına bakın. Gecikmelerin gerekçeli açıklanması, sessizce beklemede tutulmasından çok daha iyi bir işarettir.",
+      },
+      { type: "h2", text: "İkinci Ölçüt: Kuralların Şeffaflığı" },
+      {
+        type: "p",
+        text: "Bonus çevrim şartı, çekim limitleri ve hesap doğrulama koşulları sitede açıkça yazıyor mu? Bu kuralların erişilebilir olması, sonradan sürpriz yaşamamanın ön şartıdır. Kampanya sayfasında yalnızca tutar öne çıkarılıp şartların gizlendiği yapılar, sorun çıktığında kullanıcının elini zayıflatır. İyi bir platform kendi kısıtlarını da yazar.",
+      },
+      { type: "h2", text: "Üçüncü Ölçüt: Destek Erişimi" },
+      {
+        type: "p",
+        text: "Sorun yaşandığında ulaşılabilirlik, güvenilirliğin pratik karşılığıdır. Canlı desteğin gerçekten yanıt verip vermediği, yazılı taleplerin kayıt altına alınıp alınmadığı ve verilen cevabın kalıplaşmış bir metin mi yoksa dosyanıza özel bir açıklama mı olduğu belirleyicidir. Belge gönderimi ve ödeme itirazı gibi konularda yazılı kanal kullanmak, elinizde kayıt bırakması açısından her zaman daha güvenlidir.",
+      },
+      { type: "h2", text: "Uyarı İşaretleri" },
+      {
+        type: "p",
+        text: "Çekim talebi sonrası sürekli yeni belge istenmesi, her seferinde farklı bir gerekçe sunulması ve destek kanalının aniden yanıt vermemesi ciddi uyarı işaretleridir. Bir diğer uyarı, kazanç sonrası hesabın açıklama yapılmadan kısıtlanmasıdır. Kampanya kurallarının işlem yapıldıktan sonra geriye dönük değiştirilmesi de kabul edilebilir bir uygulama değildir. Bu durumlarda yazışmaların ekran görüntüsünü saklamak, itiraz sürecinde işinize yarar.",
+      },
+      { type: "h2", text: "Kendi Tarafınızdaki Güvenlik" },
+      {
+        type: "p",
+        text: "Güvenliğin yarısı kullanıcı tarafındadır. Hesabınıza özel, başka hiçbir yerde kullanmadığınız bir şifre belirleyin ve mümkünse iki adımlı doğrulamayı açın. Kimlik doğrulamanızı çekim yapmadan önce tamamlayın; bu, en sık yaşanan gecikme nedenini baştan ortadan kaldırır. Ortak bilgisayar ve halka açık Wi-Fi ağlarında oturum açmaktan kaçının. Son olarak yatırım limiti tanımlayın: bu hem bütçe hem güvenlik aracıdır.",
+      },
+      {
+        type: "p",
+        text: "18+ · Oyun bir eğlence biçimidir, kazanç garantisi değildir. Lütfen sorumlu oynayın.",
+      },
+    ],
+    faq: [
+      {
+        q: "Bir bahis sitesinin güvenilir olduğu nasıl anlaşılır?",
+        a: "En somut ölçüt çekim taleplerinin bildirilen sürede ödenmesidir. Bunun yanında kuralların şeffaf yazılması ve destek kanalının gerçekten çalışması belirleyicidir.",
+      },
+      {
+        q: "Çekimim sürekli erteleniyor, ne yapmalıyım?",
+        a: "Talebin hangi aşamada olduğunu yazılı olarak sorun ve gerekçe isteyin. Yazışmaları saklayın; belge eksiği varsa tamamlayın, gerekçesiz gecikme sürüyorsa bu bir uyarı işaretidir.",
+      },
+      {
+        q: "Kimlik belgemi göndermek güvenli mi?",
+        a: "Kimlik doğrulaması sektör standardıdır ve para aklamayı önleme yükümlülüğünden doğar. Belgeleri yalnızca platformun resmî destek kanalından gönderin, üçüncü kişilere iletmeyin.",
+      },
+      {
+        q: "Hesabım kısıtlandı, sebebi ne olabilir?",
+        a: "Çoklu hesap, başkasına ait ödeme aracı kullanımı veya doğrulanmamış bilgi en yaygın nedenlerdir. Destek ekibinden yazılı gerekçe isteyin.",
+      },
+      {
+        q: "İki adımlı doğrulama gerçekten gerekli mi?",
+        a: "Evet. Şifreniz başka bir yerden sızsa bile hesabınıza girilmesini engelleyen en etkili tek önlemdir.",
+      },
+      {
+        q: "Şikayetimi nereye iletmeliyim?",
+        a: "Önce platformun yazılı destek kanalına, kayıt bırakacak şekilde iletin. İşlem numarası, tarih ve tutar bilgisini eklemek çözüm süresini kısaltır.",
+      },
+    ],
+    related: [
+      "hesap-dogrulama-kyc-neden-gerekli",
+      "para-cekme-talebi-neden-bekliyor",
+      "musteri-hizmetleri-nasil-kullanilir",
+      "hesap-kapatma-nasil-yapilir",
+    ],
+  },
+];
+
+/** Tum niyet sayfalari - sitemap, hub bolumu ve ic link hesaplari bunu kullanir */
+export const landingPages: LandingPage[] = [...corePages, ...morePages];
 
 export function getLandingPage(slug: string) {
   return landingPages.find((p) => p.slug === slug);

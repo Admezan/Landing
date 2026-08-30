@@ -16,7 +16,7 @@ const siteLd = {
         "@type": "ContactPoint",
         contactType: "customer support",
         availableLanguage: ["Turkish"],
-        url: `${BASE}/#guvenilir`,
+        url: `${BASE}/meritking-guvenilir-mi`,
       },
       description: "Meritking güncel giriş adresi, spor bahisleri, canlı casino, poker ve slot oyunlari.",
     },

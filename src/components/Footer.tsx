@@ -49,6 +49,7 @@ export default function Footer() {
                 { label: "Meritking Giriş", href: "/" },
                 { label: "Meritking Güncel Giriş Adresi", href: "/meritking-guncel-giris-adresi" },
                 { label: "Meritking Bonus", href: "/meritking-bonus" },
+                { label: "Meritking Para Yatırma", href: "/meritking-para-yatirma" },
                 { label: "Meritking Casino", href: "/meritking-casino" },
                 { label: "Meritking Spor Bahisleri", href: "/meritking-spor-bahisleri" },
                 { label: "Meritking Mobil Giriş", href: "/meritking-mobil-giris" },
@@ -65,6 +66,7 @@ export default function Footer() {
             <h4 className="text-sm font-bold mb-4 text-primary">Destek</h4>
             <ul className="space-y-2">
               {[
+                { label: "Meritking Güvenilir mi?", href: "/meritking-guvenilir-mi" },
                 { label: "SSS", href: "/#guvenilir" },
                 { label: "Üyelik Nasıl Açılır?", href: "/blog/meritking-uyelik-nasil-acilir" },
                 { label: "Para Çekme Süreleri", href: "/blog/para-cekme-suresi-ve-limitleri" },
