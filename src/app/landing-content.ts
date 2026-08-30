@@ -174,6 +174,7 @@ const corePages: LandingPage[] = [
     related: [
       "bonus-cevrim-sarti-nasil-hesaplanir",
       "deneme-bonusu-ve-hos-geldin-bonusu-farki",
+      "free-spin-nedir-nasil-kullanilir",
       "vip-ve-sadakat-programi-nasil-isler",
       "bahiste-bankroll-yonetimi",
       "para-cekme-suresi-ve-limitleri",
@@ -322,6 +323,8 @@ const corePages: LandingPage[] = [
     ],
     related: [
       "slot-rtp-ve-volatilite",
+      "slot-turnuvasi-nedir",
+      "poker-turleri-ve-temel-kurallar",
       "rulet-cesitleri-ve-kurallari",
       "blackjack-temel-strateji",
       "baccarat-nasil-oynanir",
@@ -398,6 +401,9 @@ const corePages: LandingPage[] = [
       "erken-kazanc-cash-out-nedir",
       "e-spor-bahisleri-nasil-oynanir",
       "tenis-bahisleri-marketleri",
+      "basketbol-bahis-marketleri",
+      "mac-ertelenirse-kupon-ne-olur",
+      "oran-degisimi-ve-kupon-onayi",
       "canli-bahis-nasil-oynanir",
       "kombine-ve-sistem-bahis-farki",
       "handikap-bahsi-nedir",
@@ -481,6 +487,7 @@ const morePages: LandingPage[] = [
       "papara-ile-yatirim-ve-cekim",
       "kripto-ile-para-yatirma",
       "banka-havalesi-ile-yatirim-ve-cekim",
+      "cepbank-ve-atm-ile-yatirim",
       "para-cekme-suresi-ve-limitleri",
       "para-cekme-talebi-neden-bekliyor",
     ],
@@ -556,6 +563,7 @@ const morePages: LandingPage[] = [
     ],
     related: [
       "iki-adimli-dogrulama-nasil-acilir",
+      "hesap-bilgilerini-guncelleme",
       "sorumlu-oyun-limit-nasil-konur",
       "kumar-bagimliligi-belirtileri-ve-destek",
       "hesap-dogrulama-kyc-neden-gerekli",
