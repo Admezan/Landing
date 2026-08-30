@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Bonus", href: "/meritking-bonus" },
   { label: "Casino", href: "/meritking-casino" },
   { label: "Spor Bahisleri", href: "/meritking-spor-bahisleri" },
+  { label: "Araçlar", href: "/araclar" },
   { label: "Blog", href: "/blog" },
 ];
 

@@ -66,6 +66,9 @@ export default function Footer() {
             <h4 className="text-sm font-bold mb-4 text-primary">Destek</h4>
             <ul className="space-y-2">
               {[
+                { label: "Çevrim Şartı Hesaplama", href: "/araclar/cevrim-sarti-hesaplama" },
+                { label: "Kupon Hesaplama", href: "/araclar/kupon-hesaplama" },
+                { label: "Oran - Olasılık Çevirici", href: "/araclar/oran-olasilik-cevirici" },
                 { label: "Meritking Güvenilir mi?", href: "/meritking-guvenilir-mi" },
                 { label: "SSS", href: "/#guvenilir" },
                 { label: "Üyelik Nasıl Açılır?", href: "/blog/meritking-uyelik-nasil-acilir" },

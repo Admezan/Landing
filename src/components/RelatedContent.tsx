@@ -7,7 +7,33 @@ import { SITE_CONFIG } from "@/config";
 const PARTNER = { href: "https://reklam-mrking.com/blog", label: "Meritking rehber yazıları" };
 
 export default function RelatedContent({ current }: { current: string }) {
-  const related = articles.filter((a) => a.slug !== current).slice(0, 3);
+  // Konu benzerligine gore secim: baslik ve aciklamadaki ortak kelimeler puanlanir.
+  // Boylece her yazi farkli yazilara link verir; ic link agi tum arsive yayilir.
+  const kelimeler = (s: string) =>
+    new Set(
+      s
+        .toLowerCase()
+        .replace(/[^a-zçğıöşü0-9\s]/g, " ")
+        .split(/\s+/)
+        .filter((w) => w.length > 3)
+    );
+
+  const mevcut = articles.find((a) => a.slug === current);
+  const hedef = kelimeler(`${mevcut?.title ?? ""} ${mevcut?.description ?? ""}`);
+
+  const related = articles
+    .filter((a) => a.slug !== current)
+    .map((a) => {
+      const k = kelimeler(`${a.title} ${a.description}`);
+      let ortak = 0;
+      k.forEach((w) => {
+        if (hedef.has(w)) ortak++;
+      });
+      return { a, puan: ortak };
+    })
+    .sort((x, y) => y.puan - x.puan || x.a.slug.localeCompare(y.a.slug))
+    .slice(0, 3)
+    .map((x) => x.a);
   // Destek icerigi -> niyet sayfasi geri baglantisi; makaleyi ilgili konu sayfasina baglar
   const hubs = landingPages.filter((p) => p.related.includes(current));
 
