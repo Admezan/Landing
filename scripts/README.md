@@ -1,6 +1,8 @@
 # SEO & Performans Araç Hattı
 
-Statik export (`out/`) üzerinde çalışan, dış servis gerektirmeyen shell tabanlı denetim araçları. İki denetleyici: **SEO** (`seo-audit.sh`) ve **performans/yük bütçesi** (`perf-audit.sh`).
+Statik export (`out/`) üzerinde çalışan, dış servis gerektirmeyen denetim araçları. Üç denetleyici: **SEO** (`seo-audit.sh`), **performans/yük bütçesi** (`perf-audit.sh`) ve **içerik açığı** (`content-gap.mjs`).
+
+İlk ikisi shell tabanlıdır. Üçüncüsü Node ile yazıldı: Türkçe büyük/küçük harf katlaması (I/i/İ/ı), aksan ayrıştırma ve eklemeli dilde kelime eşleştirme Unicode farkındalığı ister; sh araçlarıyla doğru yapmak kırılgan olurdu.
 
 ## Çalıştırma
 
@@ -11,15 +13,19 @@ npm run seo
 # Performans / yük bütçesi denetimi
 npm run perf
 
-# İkisi birden
+# İçerik açığı denetimi
+npm run gap
+
+# Üçü birden
 npm run audit
 
-# Önce build al, sonra ikisini de çalıştır
+# Önce build al, sonra üçünü de çalıştır
 npm run audit:build
 
 # Doğrudan (farklı bir dizin için)
 bash scripts/seo-audit.sh out
 bash scripts/perf-audit.sh out
+node scripts/content-gap.mjs out
 ```
 
 ## Ne kontrol eder
@@ -30,11 +36,15 @@ bash scripts/perf-audit.sh out
 
 **Yinelenenler** — aynı title veya aynı description'ı paylaşan sayfalar.
 
+**İçerik açığı** (`content-gap.mjs`) — her sayfanın `<meta name="keywords">` içinde hedeflediğini söylediği sorguların gövdede gerçekten geçip geçmediği. Üç sınıfa ayırır: **tam** (ifade birebir geçiyor, ek almış hâli dâhil), **dağılmış** (kelimelerin hepsi var ama ifade olarak yok), **eksik** (en az bir kelime hiç geçmiyor). Ayrıca sayfanın ana sorgusunun H1/H2/H3 içinde geçip geçmediğini işaretler. `noindex` sayfalar denetim dışıdır.
+
+Bu denetim bir hata listesi değil, **iş listesidir**: `meta keywords` sıralamayı etkilemez, gövdedeki karşılığı etkiler. "Eksik" satırları yazılacak içeriği gösterir.
+
 ## Çıktı
 
 - Terminalde renkli özet + skor (100 tavan; A/B/C/D notu).
-- `scripts/reports/seo-report.{md,html}` ve `scripts/reports/perf-report.{md,html}` — sorun tablosu + sayfa detayı.
-- Çıkış kodu: hata bulunursa `1` (CI'de kullanılabilir), aksi halde `0`.
+- `scripts/reports/seo-report.{md,html}`, `scripts/reports/perf-report.{md,html}` ve `scripts/reports/content-gap.{md,html}` — sorun tablosu + sayfa detayı.
+- Çıkış kodu: hata bulunursa `1` (CI'de kullanılabilir), aksi halde `0`. İçerik açığı denetimi bir kapı değil rapordur; her zaman `0` döner.
 
 ## Performans denetimi (perf-audit.sh)
 
