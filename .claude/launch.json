@@ -6,6 +6,18 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "reklam-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "../Landing-reklam", "-p", "3001"],
+      "port": 3001
+    },
+    {
+      "name": "tanitim-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "../Landing-tanitim", "-p", "3002"],
+      "port": 3002
     }
   ]
 }
