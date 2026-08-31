@@ -2,6 +2,7 @@ import Link from "next/link";
 import { articles } from "@/app/blog/articles";
 import { landingPages } from "@/app/landing-content";
 import { SITE_CONFIG } from "@/config";
+import CtaLink from "@/components/CtaLink";
 
 // İçerik siteleri arası karşılıklı link (footprint düşük tutmak için tek, doğal bağlantı)
 const PARTNER = { href: "https://reklam-mrking.com/blog", label: "Meritking rehber yazıları" };
@@ -58,14 +59,14 @@ export default function RelatedContent({ current }: { current: string }) {
           >
             Meritking Güncel Giriş
           </Link>
-          <a
+          <CtaLink
             href={SITE_CONFIG.loginUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eylem="giris"
+            konum="makale-cta"
             className="px-5 py-2 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
           >
             Üye Girişi
-          </a>
+          </CtaLink>
         </div>
       </div>
 

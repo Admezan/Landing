@@ -74,9 +74,24 @@ const collectionLd = {
   },
 };
 
+/* Dizin sayfasinin anahtar kelimeleri makalelerden turetilir: her makalenin
+   ana sorgusu buraya dusar, yeni makale eklendiginde liste kendiliginden
+   guncellenir. Iki yerde ayri ayri bakim gerekmez. */
+const dizinKeywords = Array.from(
+  new Set([
+    "meritking blog",
+    "meritking rehber",
+    "bahis rehberi",
+    "casino rehberi",
+    "bahis nasıl oynanır",
+    ...articles.map((a) => a.keywords[0]).filter(Boolean),
+  ])
+);
+
 export const metadata: Metadata = {
   title: "Blog - Meritking Giriş, Bonus ve Rehber Yazıları",
   description: "Meritking giriş, güncel adres, bonus, ödeme ve casino rehberleri. Canlı casino, spor bahisleri ve slot üzerine özgün Meritking blog yazıları.",
+  keywords: dizinKeywords,
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",

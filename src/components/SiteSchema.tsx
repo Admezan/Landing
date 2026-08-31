@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/config";
 import { landingPages } from "@/app/landing-content";
+import { socialProfiles } from "@/social";
 
 const BASE = SITE_URL;
 
@@ -19,6 +20,14 @@ const siteLd = {
         url: `${BASE}/meritking-guvenilir-mi`,
       },
       description: "Meritking güncel giriş adresi, spor bahisleri, canlı casino, poker ve slot oyunlari.",
+      /*
+       * sameAs, markayi bir varlik olarak dogrulayan hesap zinciridir.
+       * Adresler src/social.ts'ten gelir; liste bosken alan hic yazilmaz -
+       * bos bir sameAs dizisi sinyal uretmedigi gibi semayi de kirletir.
+       */
+      ...(socialProfiles.length > 0
+        ? { sameAs: socialProfiles.map((s) => s.href) }
+        : {}),
     },
     {
       "@type": "WebSite",

@@ -7,10 +7,23 @@ import { toolPages } from "./tools-content";
 
 const BASE = SITE_URL;
 
+/* Dizin anahtar kelimeleri araclardan turetilir; yeni arac eklendiginde
+   liste kendiliginden buyur. */
+const dizinKeywords = Array.from(
+  new Set([
+    "bahis hesaplama araçları",
+    "bahis hesaplayıcı",
+    "ücretsiz bahis araçları",
+    "online bahis hesaplama",
+    ...toolPages.flatMap((t) => t.keywords.slice(0, 3)),
+  ])
+);
+
 export const metadata: Metadata = {
   title: "Bahis Hesaplama Araçları - Çevrim, Oran ve Kupon Hesaplayıcı",
   description:
     "Çevrim şartı, oran-olasılık ve kombine/sistem kupon hesaplayıcıları. Ücretsiz, kayıt gerektirmeden çalışır; hesaplar tarayıcınızda yapılır.",
+  keywords: dizinKeywords,
   alternates: { canonical: "/araclar" },
   openGraph: {
     type: "website",

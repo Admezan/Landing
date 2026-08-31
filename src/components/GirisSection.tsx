@@ -1,4 +1,5 @@
 import { SITE_CONFIG } from "@/config";
+import CtaLink from "@/components/CtaLink";
 
 export default function GirisSection() {
   return (
@@ -18,22 +19,22 @@ export default function GirisSection() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <a
+          <CtaLink
             href={SITE_CONFIG.loginUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eylem="giris"
+            konum="giris-bolumu"
             className="px-8 py-3.5 rounded-xl bg-primary text-black font-bold hover:bg-primary-hover transition glow-primary"
           >
             Meritking Giriş Yap
-          </a>
-          <a
+          </CtaLink>
+          <CtaLink
             href={SITE_CONFIG.registerUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eylem="kayit"
+            konum="giris-bolumu"
             className="px-8 py-3.5 rounded-xl bg-accent-green text-white font-bold hover:bg-green-600 transition glow-green"
           >
             Hemen Kayıt Ol
-          </a>
+          </CtaLink>
         </div>
       </div>
     </section>

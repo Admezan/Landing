@@ -15,7 +15,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Meritking Giriş - Güncel Adres, Canlı Bahis ve Casino",
   description: "Meritking giriş adresi, canlı bahis, casino, poker ve canlı maç izleme. Güvenilir ve hızlı erişim için tıklayın.",
-  keywords: "meritking, meritking giriş, meritking güncel giriş, canlı bahis, casino, poker, spor bahisleri",
+  /*
+   * Burada bilerek keywords YOK.
+   * Layout'a konan liste tum sayfalara miras kalir; boylece 404 ve iframe
+   * icin uretilen embed sayfalari da marka sorgularini tasir ve her sayfa
+   * ayni sorgu kumesiyle gorunur. Her sayfa kendi hedefini kendi tanimlar;
+   * marka sorgulari ana sayfada (app/page.tsx) toplanir.
+   */
   openGraph: {
     type: "website",
     siteName: "Meritking",
@@ -48,6 +54,12 @@ export default function RootLayout({
         <Script
           src="/config.js"
           strategy="beforeInteractive"
+        />
+        {/* Olcum - saglayici ve kimlik public/analytics.js icinden ayarlanir.
+            Sayfa cizimini geciktirmemesi icin etkilesim sonrasina birakilir. */}
+        <Script
+          src="/analytics.js"
+          strategy="afterInteractive"
         />
       </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>

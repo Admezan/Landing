@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { SITE_CONFIG } from "@/config";
+import CtaLink from "@/components/CtaLink";
 
 export default function Hero() {
   return (
@@ -29,22 +31,22 @@ export default function Hero() {
               hızlı ödeme ve kesintisiz 7/24 destek ile kazanmaya hemen başlayın.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a
+              <CtaLink
                 href={SITE_CONFIG.registerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                eylem="kayit"
+                konum="hero"
                 className="px-8 py-3.5 rounded-xl bg-primary text-black font-bold text-base hover:bg-primary-hover transition glow-primary"
               >
                 Hemen Üye Ol
-              </a>
-              <a
+              </CtaLink>
+              <CtaLink
                 href={SITE_CONFIG.loginUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                eylem="giris"
+                konum="hero"
                 className="px-8 py-3.5 rounded-xl border border-gray-600 text-white font-semibold text-base hover:border-primary hover:text-primary transition"
               >
                 Giriş Yap
-              </a>
+              </CtaLink>
             </div>
 
             <div className="flex items-center gap-6 mt-10">
@@ -80,15 +82,21 @@ export default function Hero() {
                     </div>
                   ))}
                 </div>
+                {/*
+                  Rozetler onceden href="#" idi: hicbir yere gitmeyen bag hem
+                  kullaniciyi bosa tiklatir hem de arama motoruna bos sinyal
+                  verir. Magaza baglantisi bulunmadigi icin ikisi de mobil
+                  erisimi anlatan niyet sayfasina baglanir.
+                */}
                 <div className="flex gap-3 mt-2">
-                  <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-700/80 text-white text-xs font-semibold">
+                  <Link href="/meritking-mobil-giris" aria-label="Android'de mobil giriş" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-700/80 text-white text-xs font-semibold">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 2.241a.5.5 0 00-.458-.1L12 3.72 6.935 2.141a.5.5 0 00-.612.36l-1.5 6A.5.5 0 005.1 9H7v6.5a.5.5 0 00.5.5h9a.5.5 0 00.5-.5V9h1.9a.5.5 0 00.277-.916l-1.5-6a.5.5 0 00-.154-.243zM12 19a3 3 0 100 6 3 3 0 000-6z"/></svg>
                     Android
-                  </a>
-                  <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700/80 text-white text-xs font-semibold">
+                  </Link>
+                  <Link href="/meritking-mobil-giris" aria-label="iOS'ta mobil giriş" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700/80 text-white text-xs font-semibold">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83z"/></svg>
                     iOS
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

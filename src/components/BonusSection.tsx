@@ -1,4 +1,5 @@
 import { SITE_CONFIG } from "@/config";
+import CtaLink from "@/components/CtaLink";
 
 export default function BonusSection() {
   return (
@@ -20,14 +21,14 @@ export default function BonusSection() {
                 Meritking&apos;e ilk kez üye olun ve ilk para yatırma işleminizde %100 bonus kazanın.
                 Spor bahisleri ve casino oyunlarında kullanabileceğiniz bonuslar sizi bekliyor.
               </p>
-              <a
+              <CtaLink
                 href={SITE_CONFIG.registerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                eylem="kayit"
+                konum="bonus-bolumu"
                 className="inline-block px-8 py-3.5 rounded-xl bg-primary text-black font-bold hover:bg-primary-hover transition glow-primary"
               >
                 Bonusu Al
-              </a>
+              </CtaLink>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

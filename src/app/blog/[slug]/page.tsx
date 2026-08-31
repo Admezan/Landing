@@ -33,6 +33,7 @@ export async function generateMetadata({
   return {
     title: pageTitle,
     description: a.description,
+    keywords: a.keywords,
     alternates: { canonical: url },
     openGraph: {
       type: "article",

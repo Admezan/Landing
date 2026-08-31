@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { SITE_CONFIG } from "@/config";
+import CtaLink from "@/components/CtaLink";
 
 // Menu, ana sayfa ici capalar yerine niyet sayfalarina baglanir:
 // her sorgu kendi sayfasina ic link alir.
@@ -44,22 +45,22 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a
+          <CtaLink
             href={SITE_CONFIG.loginUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eylem="giris"
+            konum="header"
             className="px-5 py-2 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
           >
             Üye Girişi
-          </a>
-          <a
+          </CtaLink>
+          <CtaLink
             href={SITE_CONFIG.registerUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eylem="kayit"
+            konum="header"
             className="px-5 py-2 rounded-lg bg-primary text-black text-sm font-bold hover:bg-primary-hover transition glow-primary"
           >
             Üye Ol
-          </a>
+          </CtaLink>
         </div>
 
         <button
@@ -90,12 +91,12 @@ export default function Header() {
             </Link>
           ))}
           <div className="flex gap-3 mt-3">
-            <a href={SITE_CONFIG.loginUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 rounded-lg border border-primary text-primary text-sm font-semibold">
+            <CtaLink href={SITE_CONFIG.loginUrl} eylem="giris" konum="mobil-menu" className="flex-1 text-center px-4 py-2 rounded-lg border border-primary text-primary text-sm font-semibold">
               Üye Girişi
-            </a>
-            <a href={SITE_CONFIG.registerUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 rounded-lg bg-primary text-black text-sm font-bold">
+            </CtaLink>
+            <CtaLink href={SITE_CONFIG.registerUrl} eylem="kayit" konum="mobil-menu" className="flex-1 text-center px-4 py-2 rounded-lg bg-primary text-black text-sm font-bold">
               Üye Ol
-            </a>
+            </CtaLink>
           </div>
         </div>
       )}

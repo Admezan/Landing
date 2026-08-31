@@ -20,9 +20,20 @@ export type LandingPage = {
   faq: { q: string; a: string }[];
   /** Destek iceriklerine ic link - blog makale slug'lari */
   related: string[];
+  /**
+   * Sayfanin hedefledigi arama sorgulari.
+   * Ilk sorgu sayfanin ana hedefidir; gerisi es anlamli, soru bicimli ve
+   * Turkce karaktersiz yazim varyantlaridir (kullanicilar sik sik "giris"
+   * yazar). Sayfa govdesinden AYRI tutulur ki yeni sorgu eklemek metni
+   * bozmadan tek satirlik is olsun.
+   */
+  keywords: string[];
 };
 
-const corePages: LandingPage[] = [
+/** Govde verisi - anahtar kelimeler asagidaki haritadan eklenir */
+type LandingSeed = Omit<LandingPage, "keywords">;
+
+const corePages: LandingSeed[] = [
   {
     slug: "meritking-guncel-giris-adresi",
     h1: "Meritking Güncel Giriş Adresi",
@@ -413,7 +424,7 @@ const corePages: LandingPage[] = [
   },
 ];
 
-const morePages: LandingPage[] = [
+const morePages: LandingSeed[] = [
   {
     slug: "meritking-para-yatirma",
     h1: "Meritking Para Yatırma Yöntemleri",
@@ -573,8 +584,129 @@ const morePages: LandingPage[] = [
   },
 ];
 
+/*
+ * Sayfa basina arama sorgulari.
+ *
+ * Her sayfa BASKA bir sorgu kumesini alir; ayni sorgu iki sayfada tekrar
+ * etmez, aksi halde sayfalar birbiriyle yarisir (keyword cannibalization).
+ */
+const landingKeywords: Record<string, string[]> = {
+  "meritking-guncel-giris-adresi": [
+    "meritking güncel giriş adresi",
+    "meritking guncel giris adresi",
+    "meritking yeni giriş adresi",
+    "meritking yeni adres",
+    "meritking adres değişikliği",
+    "meritking giriş adresi ne oldu",
+    "meritking son giriş adresi",
+    "meritking açılmıyor",
+    "meritking siteye giremiyorum",
+    "meritking engel kaldırma",
+    "meritking sahte site nasıl anlaşılır",
+    "meritking orijinal adres",
+    "meritking giriş linki",
+    "meritking adres güncelleme",
+  ],
+  "meritking-bonus": [
+    "meritking bonus",
+    "meritking bonuslar",
+    "meritking hoş geldin bonusu",
+    "meritking deneme bonusu",
+    "meritking ilk yatırım bonusu",
+    "meritking kayıp bonusu",
+    "meritking free spin",
+    "meritking promosyon kodu",
+    "meritking bonus çevrim şartı",
+    "meritking bonus nasıl alınır",
+    "meritking bonus kuralları",
+    "meritking casino bonusu",
+    "meritking spor bonusu",
+    "meritking bonus çekilir mi",
+  ],
+  "meritking-mobil-giris": [
+    "meritking mobil giriş",
+    "meritking mobil",
+    "meritking mobil uygulama",
+    "meritking apk",
+    "meritking android uygulama",
+    "meritking ios uygulama",
+    "meritking telefondan giriş",
+    "meritking mobil site",
+    "meritking uygulama indir",
+    "meritking mobil bahis",
+    "meritking mobil açılmıyor",
+    "meritking tablet giriş",
+  ],
+  "meritking-casino": [
+    "meritking casino",
+    "meritking canlı casino",
+    "meritking slot oyunları",
+    "meritking rulet",
+    "meritking blackjack",
+    "meritking baccarat",
+    "meritking poker",
+    "meritking casino oyunları",
+    "meritking slot siteleri",
+    "meritking canlı krupiye",
+    "meritking casino giriş",
+    "meritking bedava slot",
+    "meritking casino sağlayıcıları",
+  ],
+  "meritking-spor-bahisleri": [
+    "meritking spor bahisleri",
+    "meritking canlı bahis",
+    "meritking futbol bahisleri",
+    "meritking basketbol bahisleri",
+    "meritking tenis bahisleri",
+    "meritking e-spor bahisleri",
+    "meritking bahis oranları",
+    "meritking kupon yapma",
+    "meritking canlı maç izleme",
+    "meritking iddaa",
+    "meritking handikap bahsi",
+    "meritking alt üst bahsi",
+    "meritking cash out",
+    "meritking sistem bahis",
+  ],
+  "meritking-para-yatirma": [
+    "meritking para yatırma",
+    "meritking para yatırma yöntemleri",
+    "meritking papara",
+    "meritking havale",
+    "meritking banka havalesi",
+    "meritking kripto para yatırma",
+    "meritking usdt",
+    "meritking cepbank",
+    "meritking atm ile yatırım",
+    "meritking minimum yatırım",
+    "meritking para yatırma limitleri",
+    "meritking para yatıramıyorum",
+    "meritking yatırım komisyonu",
+    "meritking ödeme yöntemleri",
+  ],
+  "meritking-guvenilir-mi": [
+    "meritking güvenilir mi",
+    "meritking guvenilir mi",
+    "meritking lisans",
+    "meritking şikayet",
+    "meritking yorumlar",
+    "meritking dolandırıcı mı",
+    "meritking ödüyor mu",
+    "meritking para çekme sorunu",
+    "meritking kullanıcı deneyimi",
+    "meritking hesap doğrulama",
+    "meritking kyc",
+    "meritking güvenlik",
+    "meritking gerçek mi",
+  ],
+};
+
 /** Tum niyet sayfalari - sitemap, hub bolumu ve ic link hesaplari bunu kullanir */
-export const landingPages: LandingPage[] = [...corePages, ...morePages];
+export const landingPages: LandingPage[] = [...corePages, ...morePages].map((p) => ({
+  ...p,
+  // Haritada karsiligi yoksa en azindan sayfa basligi hedef olarak kalir.
+  keywords: landingKeywords[p.slug] ?? [p.h1.toLocaleLowerCase("tr").replace(/,/g, " ")],
+}));
 
 export function getLandingPage(slug: string) {
   return landingPages.find((p) => p.slug === slug);

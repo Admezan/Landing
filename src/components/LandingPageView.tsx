@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CtaLink from "@/components/CtaLink";
 import { SITE_CONFIG, SITE_URL } from "@/config";
 import { articles } from "@/app/blog/articles";
 import { getLandingPage, type LandingPage } from "@/app/landing-content";
@@ -14,6 +15,7 @@ export function landingMetadata(slug: string): Metadata {
   return {
     title: p.title,
     description: p.description,
+    keywords: p.keywords,
     alternates: { canonical: `/${p.slug}` },
     openGraph: {
       type: "article",
@@ -116,22 +118,22 @@ export default function LandingPageView({ page: p }: { page: LandingPage }) {
               geçerli olan adrese yönlendirir.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a
+              <CtaLink
                 href={SITE_CONFIG.loginUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                eylem="giris"
+                konum="niyet-sayfasi-cta"
                 className="px-6 py-2.5 rounded-lg bg-primary text-black text-sm font-bold hover:bg-primary-hover transition"
               >
                 Üye Girişi
-              </a>
-              <a
+              </CtaLink>
+              <CtaLink
                 href={SITE_CONFIG.registerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                eylem="kayit"
+                konum="niyet-sayfasi-cta"
                 className="px-6 py-2.5 rounded-lg border border-primary text-primary text-sm font-semibold hover:bg-primary/10 transition"
               >
                 Üye Ol
-              </a>
+              </CtaLink>
             </div>
           </div>
 

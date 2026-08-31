@@ -21,9 +21,17 @@ export type ToolPage = {
   body: ToolSection[];
   faq: { q: string; a: string }[];
   related: string[];
+  /**
+   * Aracin hedefledigi arama sorgulari. Marka adi bilerek kullanilmaz:
+   * bu sayfalarin isi marka disi arac sorgusunu yakalamaktir.
+   */
+  keywords: string[];
 };
 
-const coreTools: ToolPage[] = [
+/** Govde verisi - anahtar kelimeler asagidaki haritadan eklenir */
+type ToolSeed = Omit<ToolPage, "keywords">;
+
+const coreTools: ToolSeed[] = [
   {
     slug: "cevrim-sarti-hesaplama",
     h1: "Çevrim Şartı Hesaplama",
@@ -131,7 +139,7 @@ const coreTools: ToolPage[] = [
   },
 ];
 
-const bankrollTool: ToolPage = {
+const bankrollTool: ToolSeed = {
   slug: "bankroll-hesaplama",
   h1: "Bankroll ve Birim Bahis Hesaplama",
   title: "Bankroll Hesaplama - Birim Bahis ve Kelly Kriteri",
@@ -168,8 +176,73 @@ const bankrollTool: ToolPage = {
   ],
 };
 
+/*
+ * Arac basina arama sorgulari - hepsi marka disi, islem niyetli sorgular.
+ */
+const toolKeywords: Record<string, string[]> = {
+  "cevrim-sarti-hesaplama": [
+    "çevrim şartı hesaplama",
+    "cevrim sarti hesaplama",
+    "bonus çevrim hesaplama",
+    "çevrim şartı nedir",
+    // "çevrim şartı nasıl hesaplanır" bilerek burada degil:
+    // o sorguyu blog/bonus-cevrim-sarti-nasil-hesaplanir sahipleniyor.
+    "bonus çevrim hesaplayıcı",
+    "katkı oranı hesaplama",
+    "slot katkı oranı",
+    "canlı casino çevrim katkısı",
+    "40x çevrim ne demek",
+    "8x çevrim hesaplama",
+    "bonus çevrimi tamamlama",
+    "çevrim şartsız bonus",
+  ],
+  "oran-olasilik-cevirici": [
+    "oran olasılık çevirici",
+    "oran hesaplama",
+    "bahis oranı olasılık hesaplama",
+    "ondalık oran kesirli oran çevirme",
+    "amerikan oran çevirici",
+    "implied probability hesaplama",
+    "bahis marjı hesaplama",
+    "bahis şirketi marjı nedir",
+    "overround hesaplama",
+    "oran nasıl okunur",
+    "orandan yüzde hesaplama",
+    "değerli bahis hesaplama",
+  ],
+  "kupon-hesaplama": [
+    "kupon hesaplama",
+    "kombine kupon hesaplama",
+    "sistem bahis hesaplama",
+    "sistem kupon hesaplayıcı",
+    "kombine oran hesaplama",
+    "2/3 sistem nedir",
+    "sistem bahis maliyeti",
+    "kupon kazanç hesaplama",
+    "bahis kuponu hesaplayıcı",
+    "kombine bahis nasıl hesaplanır",
+    "sistem bahis kaç kolon",
+  ],
+  "bankroll-hesaplama": [
+    "bankroll hesaplama",
+    "birim bahis hesaplama",
+    "kelly kriteri hesaplama",
+    // "bahis bütçe yönetimi" blog/bahiste-bankroll-yonetimi sayfasinin hedefi.
+    "bankroll yönetimi nedir",
+    "sabit birim bahis",
+    "yüzde bahis stratejisi",
+    "bahiste risk yönetimi",
+    "kelly formülü bahis",
+    "bahis stake hesaplama",
+    "bütçe koruma bahis",
+  ],
+};
+
 /** Tum araclar - dizin, sitemap ve ana sayfa bolumu bunu kullanir */
-export const toolPages: ToolPage[] = [...coreTools, bankrollTool];
+export const toolPages: ToolPage[] = [...coreTools, bankrollTool].map((t) => ({
+  ...t,
+  keywords: toolKeywords[t.slug] ?? [t.h1.toLocaleLowerCase("tr").replace(/,/g, " ")],
+}));
 
 export function getToolPage(slug: string) {
   return toolPages.find((t) => t.slug === slug);

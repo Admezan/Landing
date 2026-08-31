@@ -8,9 +8,17 @@ export type Article = {
   body: Section[];
   faq?: { q: string; a: string }[];
   steps?: { name: string; text: string }[];
+  /**
+   * Makalenin hedefledigi arama sorgulari. Govdeden ayri tutulur: yeni sorgu
+   * eklemek metni bozmadan tek satirlik bir istir.
+   */
+  keywords: string[];
 };
 
-export const articles: Article[] = [
+/** Govde verisi - anahtar kelimeler asagidaki haritadan eklenir */
+type ArticleSeed = Omit<Article, "keywords">;
+
+const coreArticles: ArticleSeed[] = [
   {
     slug: "meritking-uyelik-nasil-acilir",
     title: "Meritking Üyelik Nasıl Açılır? Adım Adım Kayıt Rehberi",
@@ -1234,3 +1242,354 @@ export const articles: Article[] = [
     ],
   },
   ];
+
+/*
+ * Makale basina arama sorgulari.
+ *
+ * Destek icerigi oldugu icin agirlik marka disi, bilgi niyetli sorgulardadir;
+ * marka sorgulari niyet sayfalarinda toplanir. Turkce karaktersiz varyantlar
+ * yalnizca gercekten oyle aranan kaliplarda tekrarlanir.
+ */
+const articleKeywords: Record<string, string[]> = {
+  "meritking-uyelik-nasil-acilir": [
+    "meritking üyelik",
+    "meritking kayıt ol",
+    "meritking üyelik nasıl açılır",
+    "bahis sitesi üyelik açma",
+    "kayıt formu bilgileri",
+    "üyelik doğrulama",
+    "bahis hesabı açma",
+    "meritking hesap açma",
+  ],
+  "para-cekme-suresi-ve-limitleri": [
+    "para çekme süresi",
+    "bahis para çekme limitleri",
+    "para çekme ne kadar sürer",
+    "günlük çekim limiti",
+    "minimum para çekme tutarı",
+    "para çekme işlem ücreti",
+    "bahis sitesi ödeme süresi",
+  ],
+  "canli-bahis-nasil-oynanir": [
+    "canlı bahis nasıl oynanır",
+    "canlı bahis taktikleri",
+    "canlı bahis nedir",
+    "maç sırasında bahis",
+    "canlı bahis oran değişimi",
+    "yeni başlayanlar için canlı bahis",
+    "canlı bahis rehberi",
+  ],
+  "bahiste-bankroll-yonetimi": [
+    "bankroll yönetimi",
+    "bahis bütçe yönetimi",
+    "bahiste para yönetimi",
+    "birim bahis nedir",
+    "bahis kasası yönetimi",
+    "kayıp kovalamak",
+    "bahiste risk kontrolü",
+  ],
+  "kombine-ve-sistem-bahis-farki": [
+    "kombine bahis nedir",
+    "sistem bahis nedir",
+    "kombine sistem farkı",
+    "sistem kupon nasıl oynanır",
+    "kombine kupon riski",
+    "2/3 sistem bahis",
+    "çoklu bahis türleri",
+  ],
+  "hesap-dogrulama-kyc-neden-gerekli": [
+    "hesap doğrulama",
+    "kyc nedir",
+    "bahis sitesi kimlik doğrulama",
+    "belge yükleme",
+    "hesap doğrulama ne kadar sürer",
+    "kimlik doğrulama neden isteniyor",
+    "kyc belgeleri",
+  ],
+  "musteri-hizmetleri-nasil-kullanilir": [
+    "canlı destek",
+    "müşteri hizmetleri iletişim",
+    "bahis sitesi destek hattı",
+    "canlı destek nasıl kullanılır",
+    "şikayet nasıl iletilir",
+    "destek talebi oluşturma",
+  ],
+  "handikap-bahsi-nedir": [
+    "handikap bahsi nedir",
+    "handikap nasıl oynanır",
+    "asya handikap",
+    "avrupa handikap",
+    "handikap 0 ne demek",
+    "handikap bahis örnekleri",
+    "handikap 1 handikap 2",
+  ],
+  "alt-ust-bahsi-nedir": [
+    "alt üst bahsi nedir",
+    "2.5 alt üst ne demek",
+    "alt üst nasıl oynanır",
+    "toplam gol bahsi",
+    "üst 2.5 hesaplama",
+    "alt üst bahis taktikleri",
+  ],
+  "bahis-kuponu-nasil-yapilir": [
+    "bahis kuponu nasıl yapılır",
+    "kupon oluşturma",
+    "kupon yapma adımları",
+    "tekli kupon nedir",
+    "kupon onaylama",
+    "bahis kuponu örneği",
+  ],
+  "para-cekme-talebi-neden-bekliyor": [
+    "para çekme talebi bekliyor",
+    "para çekme onaylanmıyor",
+    "çekim talebi neden gecikir",
+    "para çekme reddedildi",
+    "bekleyen çekim işlemi",
+    "para çekme sorunu çözümü",
+  ],
+  "hesap-kapatma-nasil-yapilir": [
+    "hesap kapatma",
+    "bahis hesabı nasıl kapatılır",
+    "kalıcı hesap kapatma",
+    "oyuna ara verme",
+    "self exclusion",
+    "hesabımı silmek istiyorum",
+  ],
+  "sifremi-unuttum-nasil-sifirlarim": [
+    "şifremi unuttum",
+    "şifre sıfırlama",
+    "giriş yapamıyorum şifre",
+    "şifre yenileme bağlantısı",
+    "hesap kurtarma",
+    "şifre değiştirme",
+  ],
+  "bahis-orani-nasil-okunur": [
+    "bahis oranı nasıl okunur",
+    "oran nedir",
+    "orandan olasılık hesaplama",
+    "ondalık oran",
+    "kesirli oran",
+    "oranların anlamı",
+    "yüksek oran düşük oran",
+  ],
+  "bonus-cevrim-sarti-nasil-hesaplanir": [
+    "çevrim şartı nasıl hesaplanır",
+    "bonus çevrimi",
+    "çevrim şartı örneği",
+    "bonus çevrim formülü",
+    "çevrim katsayısı",
+    "bonus çekilebilir hale getirme",
+  ],
+  "erken-kazanc-cash-out-nedir": [
+    "cash out nedir",
+    "erken kazanç",
+    "kuponu erken bozdurma",
+    "cash out ne zaman kullanılır",
+    "kısmi cash out",
+    "otomatik cash out",
+  ],
+  "canli-mac-izleme-nasil-calisir": [
+    "canlı maç izleme",
+    "bahis sitesi maç izleme",
+    "canlı yayın izleme",
+    "maç izleme şartları",
+    "canlı izleme gecikmesi",
+    "streaming maç izle",
+  ],
+  "papara-ile-yatirim-ve-cekim": [
+    "papara ile para yatırma",
+    "papara ile para çekme",
+    "papara bahis",
+    "papara limitleri",
+    "papara yatırım süresi",
+    "papara hesap adı uyuşmazlığı",
+  ],
+  "kripto-ile-para-yatirma": [
+    "kripto ile para yatırma",
+    "usdt ile yatırım",
+    "bitcoin ile para yatırma",
+    "trc20 erc20 farkı",
+    "kripto ağ seçimi",
+    "kripto para çekme",
+    "cüzdan adresi hatası",
+  ],
+  "slot-rtp-ve-volatilite": [
+    "rtp nedir",
+    "slot volatilite",
+    "slot rtp oranları",
+    "yüksek volatiliteli slot",
+    "düşük volatiliteli slot",
+    "slot oyunları nasıl çalışır",
+    "rng nedir",
+  ],
+  "rulet-cesitleri-ve-kurallari": [
+    "rulet nasıl oynanır",
+    "avrupa ruleti",
+    "amerikan ruleti",
+    "fransız ruleti",
+    "rulet kuralları",
+    "rulet bahis çeşitleri",
+    "rulet ev avantajı",
+  ],
+  "blackjack-temel-strateji": [
+    "blackjack temel strateji",
+    "blackjack nasıl oynanır",
+    "blackjack kuralları",
+    "blackjack kart sayma",
+    "blackjack split double",
+    "21 oyunu kuralları",
+  ],
+  "baccarat-nasil-oynanir": [
+    "baccarat nasıl oynanır",
+    "baccarat kuralları",
+    "banker player bahsi",
+    "baccarat komisyon",
+    "baccarat beraberlik bahsi",
+    "canlı baccarat",
+  ],
+  "iki-adimli-dogrulama-nasil-acilir": [
+    "iki adımlı doğrulama",
+    "2fa nasıl açılır",
+    "hesap güvenliği",
+    "google authenticator kurulumu",
+    "sms doğrulama",
+    "yedek kod nedir",
+  ],
+  "sorumlu-oyun-limit-nasil-konur": [
+    "sorumlu oyun",
+    "yatırım limiti koyma",
+    "kayıp limiti",
+    "oyun süresi limiti",
+    "hesaba limit nasıl konur",
+    "sorumlu oyun araçları",
+  ],
+  "kumar-bagimliligi-belirtileri-ve-destek": [
+    "kumar bağımlılığı belirtileri",
+    "kumar bağımlılığı testi",
+    "kumar bağımlılığı destek hattı",
+    "kumar bağımlılığı tedavi",
+    "oyun bağımlılığı yardım",
+    "yeşilay danışmanlık",
+  ],
+  "banka-havalesi-ile-yatirim-ve-cekim": [
+    "banka havalesi ile para yatırma",
+    "havale eft yatırım",
+    "banka havalesi çekim",
+    "havale ne kadar sürer",
+    "eft saatleri",
+    "havale açıklama alanı",
+  ],
+  "deneme-bonusu-ve-hos-geldin-bonusu-farki": [
+    "deneme bonusu nedir",
+    "hoş geldin bonusu nedir",
+    "deneme bonusu farkı",
+    "yatırımsız bonus",
+    "ilk yatırım bonusu",
+    "bedava bonus şartları",
+  ],
+  "e-spor-bahisleri-nasil-oynanir": [
+    "e-spor bahisleri",
+    "espor bahis nasıl oynanır",
+    "cs2 bahis",
+    "lol bahisleri",
+    "dota 2 bahis",
+    "valorant bahis",
+    "e-spor bahis marketleri",
+  ],
+  "tenis-bahisleri-marketleri": [
+    "tenis bahisleri",
+    "tenis bahis marketleri",
+    "set bahsi tenis",
+    "oyun handikabı tenis",
+    "tenis maçı iptal kupon",
+    "tenis canlı bahis",
+  ],
+  "vip-ve-sadakat-programi-nasil-isler": [
+    "vip programı",
+    "sadakat programı",
+    "vip seviye avantajları",
+    "puan toplama sistemi",
+    "cashback iadesi",
+    "vip nasıl olunur",
+  ],
+  "bahis-terimleri-sozlugu": [
+    "bahis terimleri",
+    "bahis sözlüğü",
+    "bahis terimleri sözlüğü",
+    "iddaa terimleri",
+    "bahis kısaltmaları",
+    "kombine tekli sistem ne demek",
+    "bahis kavramları",
+  ],
+  "basketbol-bahis-marketleri": [
+    "basketbol bahisleri",
+    "basketbol bahis marketleri",
+    "basketbol handikap",
+    "uzatma sayılır mı",
+    "basketbol alt üst",
+    "nba bahis",
+  ],
+  "mac-ertelenirse-kupon-ne-olur": [
+    "maç ertelenirse kupon ne olur",
+    "maç iptal olursa bahis",
+    "iade edilen bahis",
+    "kupon iptali kuralları",
+    "erteleme kuralı bahis",
+    "maç tamamlanmazsa ne olur",
+  ],
+  "oran-degisimi-ve-kupon-onayi": [
+    "oran değişimi",
+    "kupon onaylanmadı",
+    "oran düştü kupon",
+    "kupon onayı bekliyor",
+    "oran kabul ayarı",
+    "bahis reddedildi",
+  ],
+  "free-spin-nedir-nasil-kullanilir": [
+    "free spin nedir",
+    "bedava dönüş",
+    "free spin kazancı çekme",
+    "free spin çevrim şartı",
+    "ücretsiz spin bonusu",
+    "free spin nasıl kullanılır",
+  ],
+  "slot-turnuvasi-nedir": [
+    "slot turnuvası",
+    "slot turnuvası nedir",
+    "casino turnuvası katılım",
+    "turnuva puanlaması",
+    "slot yarışması ödülleri",
+    "leaderboard turnuva",
+  ],
+  "poker-turleri-ve-temel-kurallar": [
+    "poker türleri",
+    "texas holdem kuralları",
+    "omaha poker",
+    "poker el sıralaması",
+    "poker nasıl oynanır",
+    "poker temel kurallar",
+  ],
+  "cepbank-ve-atm-ile-yatirim": [
+    "cepbank ile para yatırma",
+    "atm ile para yatırma",
+    "kartsız işlem yatırım",
+    "cepbank nedir",
+    "atm yatırım kodu",
+    "cepbank limitleri",
+  ],
+  "hesap-bilgilerini-guncelleme": [
+    "hesap bilgilerini güncelleme",
+    "e-posta değiştirme",
+    "telefon numarası güncelleme",
+    "ad soyad düzeltme",
+    "adres değişikliği belgesi",
+    "ödeme yöntemi ekleme",
+  ],
+};
+
+/** Tum makaleler - blog dizini, sitemap ve ic link hesaplari bunu kullanir */
+export const articles: Article[] = coreArticles.map((a) => ({
+  ...a,
+  // Haritada karsiligi yoksa en azindan makale basligi hedef olarak kalir.
+  keywords: articleKeywords[a.slug] ?? [a.title.toLocaleLowerCase("tr").replace(/,/g, " ")],
+}));
